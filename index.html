@@ -1007,6 +1007,16 @@ footer {
   .hero-ctas .btn { justify-content: center; }
 }
 
+.demo-exit-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+}
+@media (max-width: 768px) {
+  #demo-exit-bar { display: flex !important; }
+  #page-client .dash-main { padding-top: 52px !important; }
+}
+
 /* SCROLL REVEAL ANIMATIONS */
 .reveal {
   opacity: 0; transform: translateY(24px);
@@ -1403,7 +1413,23 @@ html, body {
   }
 }
 
-/* FIX 12 — Announcement bar mobile text */
+/* FIX 13 — Waitlist section padding-bottom on mobile (sticky CTA overlap) */
+@media (max-width: 768px) {
+  #waitlist-section {
+    padding-bottom: 100px !important;
+  }
+}
+
+/* FIX 14 — Hero: hide founding member info box on mobile, CTA first */
+@media (max-width: 768px) {
+  #hero-founding-box {
+    display: none !important;
+  }
+  .hero-form-microcopy {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   .announcement-bar {
     padding: 8px 16px !important;
@@ -1427,7 +1453,7 @@ html, body {
   <div class="nav-center">
     <button class="nav-link" onclick="scrollToSection('how-it-works')">How it works</button>
     <button class="nav-link" onclick="scrollToSection('pricing')">Pricing</button>
-    <button class="nav-link" onclick="scrollToSection('what-you-get')">Features</button>
+    <button class="nav-link" onclick="scrollToSection('what-you-get')">What you get</button>
     <button class="nav-link" onclick="scrollToSection('our-lawyer')">Our lawyer</button>
     <button class="nav-link" onclick="scrollToSection('faq')">FAQ</button>
   </div>
@@ -1438,7 +1464,7 @@ html, body {
     <button class="btn btn-ghost btn-sm" onclick="showPage('auth');switchAuthTab('login')">Sign in</button>
     <button class="btn btn-primary btn-sm" onclick="joinWaitlist()">
       <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
-      Get checklist
+      Join free — founding member
     </button>
     <button class="nav-menu-btn" id="nav-menu-btn" onclick="openMobileMenu()">
       <i data-lucide="menu"></i>
@@ -1463,7 +1489,7 @@ html, body {
         <i data-lucide="tag"></i> Pricing
       </button>
       <button class="mobile-nav-link" onclick="closeMobileMenuDirect();scrollToSection('what-you-get')">
-        <i data-lucide="gift"></i> Features
+        <i data-lucide="gift"></i> What you get
       </button>
       <button class="mobile-nav-link" onclick="closeMobileMenuDirect();scrollToSection('our-lawyer')">
         <i data-lucide="scale"></i> Our lawyer
@@ -1478,7 +1504,7 @@ html, body {
     <div style="display:flex;flex-direction:column;gap:10px">
       <button class="btn btn-outline btn-full" onclick="closeMobileMenuDirect();showPage('auth');switchAuthTab('login')">Sign in</button>
       <button class="btn btn-primary btn-full" onclick="closeMobileMenuDirect();joinWaitlist()">
-        Get my TRC checklist <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+        Reserve my free founding spot <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
       </button>
     </div>
   </div>
@@ -1493,9 +1519,9 @@ html, body {
   <div class="announcement-bar" id="announcement-bar">
     <div class="bar-text">
       <div class="pulse-dot"></div>
-      <span>KartaFlow is now open — 20 founding spots · Follow <strong style="color:white">@kartaflow.pl</strong> on Instagram</span>
+      <span><strong style="color:white">Early Access is open.</strong> Reserve your founding member spot free — lock in the lowest price we'll ever offer, permanently. Only 20 spots this month.</span>
     </div>
-    <button class="btn-bar" onclick="joinWaitlist()">Get my checklist →</button>
+    <button class="btn-bar" onclick="joinWaitlist()">Claim my free spot →</button>
   </div>
 
   <!-- HERO -->
@@ -1518,21 +1544,31 @@ html, body {
         <div class="reveal reveal-delay-3" id="waitlist-hero">
           <div class="hero-waitlist-badge">
             <div class="badge-dot"></div>
-            20 founding member spots this month
+            Early Access — 20 founding member spots left this month
           </div>
           <div class="hero-tally-wrap">
             <button class="btn btn-primary btn-lg" style="width:100%;font-size:16px;padding:16px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-              Get my TRC document checklist
+              Reserve my founding spot — it's free
               <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
             </button>
-            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">Takes 30 seconds · Free · No credit card</div>
+            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">Takes 30 seconds · Free · No credit card · No payment today</div>
           </div>
           <div class="hero-form-microcopy">
-            <span><i data-lucide="shield" style="width:13px;height:13px;color:var(--text-3)"></i> Free to join</span>
-            <span>·</span>
-            <span><i data-lucide="zap" style="width:13px;height:13px;color:var(--text-3)"></i> Early access + founding price</span>
-            <span>·</span>
-            <span><i data-lucide="credit-card" style="width:13px;height:13px;color:var(--text-3)"></i> No credit card</span>
+            <span><i data-lucide="gift" style="width:13px;height:13px;color:var(--red)"></i> <strong style="color:var(--text)">Founding member = lowest price ever, locked in forever</strong></span>
+          </div>
+          <div id="hero-founding-box" style="background:var(--surface);border-radius:var(--r);padding:16px 18px;margin-bottom:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Founding member</div>
+            <p style="font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:14px">Sign up today and you're one of the first people to use KartaFlow when it launches. For that, you get the lowest price we'll ever charge — locked in permanently — plus priority access ahead of the public queue and a direct line to our legal team.</p>
+            <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Lowest price ever — locked in forever</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> First in line when KartaFlow opens publicly</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Personal document checklist (after sign up + questionnaire)</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Direct WhatsApp to Olena's legal team</div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="joinWaitlist()" style="border-radius:var(--r);font-size:14px">
+              Claim one of 20 founding spots <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+            </button>
+            <div style="font-size:11px;color:var(--text-4);text-align:center;margin-top:8px">Free to join · No card · No payment today</div>
           </div>
           <div style="margin-top:4px">
             <button class="btn btn-outline" onclick="loginDemo('client')" style="gap:9px">
@@ -1654,6 +1690,7 @@ html, body {
       <div class="proof-item"><i data-lucide="clock"></i>Lawyer feedback within <strong>24 hours</strong></div>
       <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
       <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
+      <div class="proof-item"><i data-lucide="gift"></i><strong>Founding member</strong> = lowest price ever, locked in forever · free to join today</div>
       <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong> — if your documents are right</div>
       <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> cases approved by Olena's team</div>
       <div class="proof-item"><i data-lucide="star"></i><strong>98%</strong> success rate</div>
@@ -1661,6 +1698,7 @@ html, body {
       <div class="proof-item"><i data-lucide="clock"></i>Lawyer feedback within <strong>24 hours</strong></div>
       <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
       <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
+      <div class="proof-item"><i data-lucide="gift"></i><strong>Founding member</strong> = lowest price ever, locked in forever · free to join today</div>
     </div>
   </div>
 
@@ -1710,11 +1748,12 @@ html, body {
 
   <!-- MID-PAGE CTA -->
   <div style="background:var(--dark);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
-    <div class="container" style="max-width:600px">
-      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Founding members · 20 spots this month</p>
+    <div class="container" style="max-width:640px">
+      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px">Early Access · 20 founding member spots this month</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px;line-height:1.6">Reserve your spot free. Lock in the lowest price we'll ever charge — <strong style="color:rgba(255,255,255,0.8)">permanently.</strong></p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
-        See if KartaFlow is right for my case
+        Reserve my founding member spot — it's free
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
       <div style="font-size:12px;color:rgba(255,255,255,0.35)">Takes 30 seconds · No credit card · Free to join</div>
@@ -2019,7 +2058,7 @@ html, body {
       <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Founding members · 20 spots this month</p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
-        Join founding members — 20 spots left
+        Reserve my spot — free, 30 seconds
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
       <div style="font-size:12px;color:rgba(255,255,255,0.35)">Founding price locked forever · 20 spots this month</div>
@@ -2032,49 +2071,38 @@ html, body {
   <section class="section" id="waitlist-section" style="padding-top:80px;padding-bottom:80px">
     <div class="container">
       <div class="waitlist-inner">
-        <div style="text-align:center;margin-bottom:40px">
-          <span class="label-red reveal" style="margin-bottom:12px;display:inline-flex">
+        <div style="text-align:center;margin-bottom:20px">
+          <span class="label-red reveal" style="margin-bottom:16px;display:inline-flex">
             <i data-lucide="users" style="width:13px;height:13px"></i>
-            Early access · Founding members
+            Only 20 spots available this month
           </span>
-          <h2 class="display-lg reveal reveal-delay-1" style="color:white;margin-bottom:16px">
-            Your TRC. Done right.<br><em>First time.</em>
+          <h2 class="display-lg reveal reveal-delay-1" style="color:white;margin-bottom:14px">
+            Fill in the form below.<br><em>Secure your founding spot.</em>
           </h2>
-          <p class="reveal reveal-delay-2" style="font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.65">
-            KartaFlow is open to founding members now. Join KartaFlow — your application, lawyer-reviewed and ready before you ever set foot in the Voivodeship office. 20 spots available this month — founding members get the best price we'll ever offer, locked in permanently.
+          <p class="reveal reveal-delay-2" style="font-size:16px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto 0;line-height:1.65">
+            Sign up today and you're among the first to use KartaFlow when it launches. For that, you get the lowest price we'll ever charge — locked in permanently — plus priority access and a direct line to our legal team.
           </p>
-          <div class="waitlist-proof-pills reveal reveal-delay-3" style="justify-content:center;margin-top:24px">
-            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
-              <i data-lucide="users" style="width:13px;height:13px"></i> 20 founding spots this month
-            </div>
-            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
-              <i data-lucide="lock" style="width:13px;height:13px"></i> Founding price locked forever
-            </div>
-            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
-              <i data-lucide="map-pin" style="width:13px;height:13px"></i> Poland's only TRC platform
-            </div>
-          </div>
         </div>
 
         <div class="waitlist-card reveal reveal-delay-2">
           <div class="waitlist-card-header">
-            <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Founding member · 20 spots this month</div>
-            <p style="font-size:15px;color:var(--text-2);line-height:1.55;margin-bottom:0">Takes 30 seconds · No credit card · Free forever to join</p>
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Secure your founding spot — 20 available this month</div>
+            <p style="font-size:15px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0">Free to join. 30 seconds. Your founding price is locked in the moment you submit.</p>
           </div>
           <div class="waitlist-card-body" style="padding-top:8px">
-            <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="600" style="min-height:600px" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+            <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="600" style="min-height:600px" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
           </div>
         </div>
 
-    <p style="font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
-      <i data-lucide="lock" style="width:11px;height:11px"></i>
-      Your data stays private. Never shared. Stored securely in the EU.
-    </p>
+        <p style="font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
+          <i data-lucide="lock" style="width:11px;height:11px"></i>
+          Your data stays private. Never shared. Stored securely in the EU.
+        </p>
         <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-top:24px;line-height:1.6">
           Built by <strong style="color:rgba(255,255,255,0.55)">Makomborero Pashapa</strong>, in partnership with <strong style="color:rgba(255,255,255,0.55)">Olena Harkusha</strong> (Radca Prawny).
         </p>
         <p class="waitlist-microcopy reveal" style="color:rgba(255,255,255,0.35);margin-top:20px">
-          No spam. No commitment. Just early access and the best price we'll ever offer.
+          No payment today. No spam. No commitment. Just your founding member spot and the lowest price we'll ever offer — locked in permanently.
         </p>
       </div>
     </div>
@@ -2105,7 +2133,7 @@ html, body {
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
         <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-          Get my TRC checklist <i data-lucide="arrow-right"></i>
+          Reserve my free founding member spot <i data-lucide="arrow-right"></i>
         </button>
         <button class="btn btn-outline btn-lg" onclick="openMartaChat()">
           <i data-lucide="bot"></i> Ask Marta — AI assistant
@@ -2277,26 +2305,27 @@ html, body {
         <!-- PRICING WAITLIST STRIP -->
         <div class="pricing-waitlist-strip reveal">
           <div>
-            <div class="label-red" style="margin-bottom:12px"><i data-lucide="clock" style="width:13px;height:13px"></i> Limited spots available</div>
+            <div class="label-red" style="margin-bottom:12px"><i data-lucide="clock" style="width:13px;height:13px"></i> Only 20 spots available this month</div>
             <h3 style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,28px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:10px">
-              Not ready to commit yet?<br><em>Join free. Secure your founding price.</em>
+              Not ready to start yet?<br><em>Join free. Your price is saved forever.</em>
             </h3>
             <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:20px">
-              Founding members get locked-in pricing and skip the queue when we launch publicly.
+              Signing up today is completely free — no payment, no credit card. You're simply reserving your <strong>founding member spot</strong>, which locks in the lowest price we'll ever charge. Start your application whenever you're ready — your price never changes.
             </p>
-<button class="btn btn-primary btn-lg" style="width:100%;font-size:15px;padding:14px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-              Get my TRC checklist
+            <button class="btn btn-primary btn-lg" style="width:100%;font-size:15px;padding:14px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
+              Reserve my free spot now
               <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
             </button>
-            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">20 spots · Free to join · No credit card</div>
+            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">20 spots · Free to join · No credit card · No payment today</div>
           </div>
           <div>
-            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px">Founding member benefits</div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px">What "founding member" means for you</div>
             <ul class="pricing-waitlist-benefits">
-              <li>First access when we launch publicly</li>
-              <li>Founding price locked in forever</li>
-              <li>Priority support from our legal team</li>
-              <li>Direct WhatsApp line to your lawyer</li>
+              <li><strong>Your personal document checklist</strong> — know exactly what to prepare</li>
+              <li><strong>Lowest price locked in forever</strong> — even if you start in 3 months</li>
+              <li><strong>First in line</strong> when we fully launch to the public</li>
+              <li><strong>Priority support</strong> from our legal team</li>
+              <li><strong>Direct WhatsApp</strong> line to our lawyer</li>
               <li>Zero spam · Unsubscribe anytime</li>
             </ul>
           </div>
@@ -2308,14 +2337,15 @@ html, body {
 
   <!-- MID-PAGE CTA -->
   <div style="background:var(--surface);padding:40px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <div class="container" style="max-width:600px">
-      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px">Founding members · 20 spots this month</p>
+    <div class="container" style="max-width:640px">
+      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Early Access · 20 founding member spots this month</p>
+      <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.6">As a <strong>founding member</strong>, your price is locked in permanently — it's the best price we'll ever offer. You pay nothing today.</p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
         Lock in the founding price — forever
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
-      <div style="font-size:12px;color:var(--text-3)">Founding members get the best price we'll ever offer</div>
+      <div style="font-size:12px;color:var(--text-3)">Free to join · No credit card · No payment today</div>
     </div>
   </div>
 
@@ -2363,7 +2393,7 @@ html, body {
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
         <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-          Get my TRC checklist <i data-lucide="arrow-right"></i>
+          Reserve my free founding member spot <i data-lucide="arrow-right"></i>
         </button>
         <a href="https://wa.me/48452069627" target="_blank" class="btn btn-lg" style="background:#25D366;color:white">
           <i data-lucide="message-circle"></i> Chat on WhatsApp
@@ -2460,10 +2490,10 @@ html, body {
       </div>
 
       <div style="text-align:center;margin-top:32px" class="reveal">
-        <p style="font-size:15px;color:var(--text-2);margin-bottom:20px;line-height:1.55">Like what you see? This is exactly what you'll get. Join the waitlist for early access.</p>
+        <p style="font-size:15px;color:var(--text-2);margin-bottom:20px;line-height:1.55">This is exactly what you'll see when you join. Sign up free today to get your own dashboard, checklist, and lawyer review.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-            Get my TRC checklist → <i data-lucide="arrow-right"></i>
+            Reserve my free founding member spot → <i data-lucide="arrow-right"></i>
           </button>
           <button class="btn btn-outline btn-lg" onclick="loginDemo('client')">
             <i data-lucide="layout-dashboard"></i> Open interactive demo
@@ -2513,7 +2543,7 @@ html, body {
               @kartaflow.pl
             </a>
             <button class="btn btn-primary" onclick="joinWaitlist()" style="font-size:13px;padding:10px 20px">
-              Get my TRC checklist <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+              Reserve my free founding member spot <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
             </button>
           </div>
         </div>
@@ -2621,13 +2651,13 @@ html, body {
           Poland's first &amp; only TRC platform
         </div>
         <h2 class="cta-title">Your residency.<br>Done right. First time.</h2>
-        <p class="cta-sub">Most TRC rejections happen because of avoidable document errors. Olena's team has a 98% success rate because they catch those errors before you submit. Join as a founding member — 20 spots available this month, at the best price we'll ever offer.</p>
+        <p class="cta-sub">Most TRC rejections happen because of avoidable document errors. Olena's team has a 98% success rate because they catch those errors before you submit. Join as a <strong>founding member</strong> — you get the lowest price we'll ever offer, locked in permanently. You pay nothing today. Only 20 spots this month.</p>
         <div style="max-width:500px;margin:0 auto 16px">
           <button class="btn btn-primary btn-lg" style="width:100%;font-size:15px;padding:14px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-            Get my TRC checklist
+            Reserve my free founding member spot
             <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
           </button>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;text-align:center">20 spots · Free to join · No credit card</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;text-align:center">20 spots · Free to join · No credit card · No payment today</div>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px">20 founding spots this month · Zero spam · Unsubscribe anytime</p>
         <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -2833,6 +2863,13 @@ html, body {
      CLIENT DASHBOARD
 ════════════════════════════ -->
 <div id="page-client" class="page">
+  <!-- Mobile demo exit bar (only visible on mobile) -->
+  <div style="display:none" id="demo-exit-bar" class="demo-exit-bar">
+    <button onclick="showPage('landing')" style="background:none;border:none;color:var(--text-2);font-size:13px;font-weight:600;font-family:var(--font-body);cursor:pointer;display:flex;align-items:center;gap:6px;padding:0">
+      <i data-lucide="arrow-left" style="width:15px;height:15px"></i> Back to KartaFlow
+    </button>
+    <span style="font-size:12px;color:var(--text-3);font-weight:500">📱 Demo preview</span>
+  </div>
   <div class="dash-layout">
     <!-- Sidebar -->
     <aside class="dash-sidebar">
@@ -2884,6 +2921,10 @@ html, body {
     <!-- Mobile bottom nav -->
     <div class="dash-mobile-nav">
       <div class="dash-mobile-nav-inner">
+        <button class="dash-mob-item" onclick="showPage('landing')" style="color:var(--red)">
+          <i data-lucide="arrow-left"></i>
+          <span class="dash-mob-label">Exit Demo</span>
+        </button>
         <button class="dash-mob-item active" onclick="clientNav('overview',this)">
           <i data-lucide="layout-dashboard"></i>
           <span class="dash-mob-label">Home</span>
@@ -3104,7 +3145,11 @@ function scrollToSection(id) {
   showPage('landing');
   setTimeout(() => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      const offset = window.innerWidth <= 768 ? 100 : 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   }, 50);
 }
 
@@ -4202,7 +4247,7 @@ function sendMartaMsg(text) {
     // Add follow-up quick replies
     msgs.innerHTML += `
       <div class="marta-quick-replies" style="padding:0;margin-top:4px">
-        <button class="marta-qr" onclick="joinWaitlist();toggleMartaChat()">Get my TRC checklist →</button>
+        <button class="marta-qr" onclick="joinWaitlist();toggleMartaChat()">Reserve my free founding spot →</button>
         <button class="marta-qr" onclick="martaQuickReply(this,'How much does KartaFlow cost?')">See pricing</button>
         <a href="https://wa.me/48452069627" target="_blank" class="marta-qr" style="text-decoration:none;display:inline-flex;align-items:center;gap:4px">💬 WhatsApp us</a>
       </div>`;
@@ -4220,22 +4265,28 @@ function sendMartaMsg(text) {
     <button class="modal-close" onclick="closeWaitlistModal()" aria-label="Close">
       <i data-lucide="x" style="width:16px;height:16px"></i>
     </button>
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Limited founding member spots</div>
-    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:12px">Don't leave without<br>your spot.</h2>
-    <p style="font-size:15px;color:var(--text-2);line-height:1.6;margin-bottom:20px">A licensed lawyer personally reviews every case. We're opening 20 founding member spots this month — get first access and the best price we'll ever offer.</p>
-    <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" style="min-height:560px" frameborder="0" marginheight="0" marginwidth="0" allow="fullscreen" title="Join the KartaFlow Early Access"></iframe>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Early Access · 20 founding member spots left</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px">Fill in this form.<br>Here's what you get.</h2>
+    <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:14px">You're one of the first to use KartaFlow when it launches — and for that, you get the lowest price we'll ever charge, locked in forever.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Founding price — locked in forever.</strong> The lowest KartaFlow will ever charge, even if you start in 3 months.</span></div>
+      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>First in line.</strong> Priority access when KartaFlow opens publicly.</span></div>
+      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Personal document checklist</strong> — generated for your specific case after sign-up.</span></div>
+      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Direct WhatsApp to our legal team</strong> — ask anything, before you pay a single zloty.</span></div>
+    </div>
+    <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="560" style="min-height:560px" frameborder="0" marginheight="0" marginwidth="0" allow="fullscreen" title="Join the KartaFlow Early Access"></iframe>
     <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
       <i data-lucide="lock" style="width:11px;height:11px"></i>
       Your data stays private. Never shared. Stored securely in the EU.
     </p>
-    <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:12px">Takes 30 seconds · No credit card · Free forever to join</p>
+    <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:12px">Takes 30 seconds · No credit card · No payment today · Free forever to join</p>
   </div>
 </div>
 
 <!-- MOBILE STICKY CTA -->
 <div id="mobile-sticky-cta">
   <div class="sticky-cta-inner">
-    <button class="sticky-cta-btn" onclick="joinWaitlist()">Start my TRC application the right way →</button>
+    <button class="sticky-cta-btn" onclick="joinWaitlist()">Claim my founding spot — free →</button>
     <button class="sticky-cta-dismiss" onclick="dismissMobileStickyCta()" aria-label="Dismiss">×</button>
   </div>
 </div>
