@@ -171,6 +171,7 @@ body {
   font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
 }
 em { font-style: italic; color: var(--red); }
+.hero-sub em { color: var(--text); font-style: italic; font-weight: 600; }
 .label-xs {
   font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--text-3);
@@ -252,6 +253,231 @@ em { font-style: italic; color: var(--red); }
 }
 .modal-close:hover { background: var(--surface-2); color: var(--text); }
 
+/* ═══ WAITLIST MODAL ═══ */
+#waitlist-modal .modal { max-width: 560px; padding: 44px 40px 36px; }
+#waitlist-modal .modal iframe { border-radius: 12px; overflow: hidden; }
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .instagram-cards-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .reel-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+@media (max-width: 768px) {
+  .cost-nothing-grid { grid-template-columns: 1fr !important; gap: 24px !important; padding: 28px 20px !important; }
+}
+
+@media (max-width: 768px) {
+  #waitlist-modal-overlay { padding: 0; align-items: flex-end; }
+  #waitlist-modal { border-radius: 28px 28px 0 0; max-width: 100%; padding: 32px 20px 40px; animation: sheet-up 0.35s var(--ease-out); }
+}
+
+/* ═══ ANNOUNCEMENT BAR ═══ */
+.announcement-bar {
+  background: var(--dark); color: rgba(255,255,255,0.9);
+  padding: 10px 24px; display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; font-weight: 500; gap: 12px;
+  position: relative; z-index: 190; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.announcement-bar .pulse-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; flex-shrink: 0;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+  50% { opacity:0.8; box-shadow: 0 0 0 5px rgba(74,222,128,0); }
+}
+.announcement-bar .bar-text { display: flex; align-items: center; gap: 8px; flex: 1; }
+.announcement-bar .btn-bar {
+  background: var(--red); color: white; padding: 6px 14px; border-radius: 100px;
+  font-size: 12px; font-weight: 600; border: none; cursor: pointer; white-space: nowrap;
+  font-family: var(--font-body); transition: all 0.2s;
+}
+.announcement-bar .btn-bar:hover { background: var(--red-deep); }
+@media (max-width: 768px) {
+  .announcement-bar .bar-text span { display: none; }
+  .announcement-bar .bar-text::after { content: "Early access now open"; }
+}
+
+/* ═══ HERO WAITLIST FORM ═══ */
+.hero-waitlist-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red); color: white; padding: 7px 14px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; margin-bottom: 20px;
+  animation: pulse-badge 3s infinite;
+}
+.hero-waitlist-badge .badge-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: #4ADE80;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-badge {
+  0%,100% { box-shadow: 0 0 0 0 rgba(232,19,42,0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(232,19,42,0); }
+}
+.hero-tally-wrap {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow); max-height: 160px;
+  margin-bottom: 10px; position: relative;
+}
+.hero-tally-wrap iframe { display: block; }
+.hero-form-microcopy {
+  font-size: 12px; color: var(--text-3); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.hero-form-microcopy span { display: flex; align-items: center; gap: 4px; }
+
+/* ═══ WAITLIST SECTION ═══ */
+#waitlist-section {
+  background: linear-gradient(135deg, #0D0D0D 0%, #1a0508 50%, #0D0D0D 100%);
+  position: relative; overflow: hidden;
+}
+#waitlist-section::before {
+  content: ''; position: absolute; top: -40%; left: -10%; width: 60%; height: 140%;
+  background: radial-gradient(ellipse, rgba(232,19,42,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+#waitlist-section::after {
+  content: ''; position: absolute; bottom: -30%; right: -5%; width: 50%; height: 120%;
+  background: radial-gradient(ellipse, rgba(232,19,42,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.waitlist-inner { position: relative; z-index: 1; }
+.waitlist-card {
+  background: var(--white); border-radius: var(--r-xl);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.2);
+  overflow: hidden; max-width: 680px; margin: 0 auto;
+}
+.waitlist-card-header { padding: 40px 40px 0; }
+.waitlist-card-body { padding: 0 40px 40px; }
+.waitlist-proof-pills {
+  display: flex; gap: 10px; flex-wrap: wrap; margin: 24px 0 28px;
+}
+.waitlist-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 7px 13px; border-radius: 100px;
+  font-size: 13px; font-weight: 500; color: var(--text-2);
+}
+.waitlist-microcopy {
+  text-align: center; font-size: 13px; color: var(--text-3); margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .waitlist-card-header, .waitlist-card-body { padding-left: 24px; padding-right: 24px; }
+}
+
+/* ═══ POST-PRICING WAITLIST STRIP ═══ */
+.pricing-waitlist-strip {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: var(--r-xl); padding: 40px 40px 36px;
+  margin-top: 40px; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+  box-shadow: var(--shadow);
+}
+.pricing-waitlist-benefits { list-style: none; display: flex; flex-direction: column; gap: 10px; padding-top: 8px; }
+.pricing-waitlist-benefits li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: var(--text-2); font-weight: 500;
+}
+.pricing-waitlist-benefits li::before {
+  content: ''; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--red-soft); border: 1.5px solid var(--red-border);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8132A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px; background-repeat: no-repeat; background-position: center;
+}
+@media (max-width: 768px) {
+  .pricing-waitlist-strip { grid-template-columns: 1fr; gap: 24px; padding: 28px 20px 24px; }
+}
+
+/* ═══ DEMO PREVIEW SECTION ═══ */
+.demo-preview-section { background: var(--off-white); }
+.demo-browser-chrome {
+  background: var(--white); border-radius: var(--r-xl);
+  border: 1.5px solid var(--border); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.demo-chrome-bar {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 12px 18px; display: flex; align-items: center; gap: 10px;
+}
+.demo-chrome-dots { display: flex; gap: 6px; }
+.demo-chrome-dot { width: 12px; height: 12px; border-radius: 50%; }
+.demo-chrome-dot.r { background: #FF5F57; }
+.demo-chrome-dot.y { background: #FEBC2E; }
+.demo-chrome-dot.g { background: #28C840; }
+.demo-chrome-url {
+  flex: 1; background: var(--surface-2); border-radius: 100px;
+  padding: 5px 14px; font-size: 12px; color: var(--text-3); font-weight: 500; max-width: 300px;
+}
+.demo-dashboard-inner {
+  display: grid; grid-template-columns: 260px 1fr; min-height: 420px;
+}
+.demo-sidebar {
+  background: var(--dark); padding: 24px 16px; border-right: 1px solid rgba(255,255,255,0.06);
+}
+.demo-sidebar-header {
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  color: white; margin-bottom: 4px; letter-spacing: -0.01em;
+}
+.demo-sidebar-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+.demo-checklist-item {
+  display: flex; align-items: center; gap: 9px; padding: 8px 10px;
+  border-radius: 10px; margin-bottom: 4px; font-size: 13px; font-weight: 500;
+}
+.demo-checklist-item.done { background: rgba(74,222,128,0.08); color: rgba(255,255,255,0.8); }
+.demo-checklist-item.active { background: rgba(232,19,42,0.12); color: white; }
+.demo-checklist-item.pending { color: rgba(255,255,255,0.3); }
+.demo-checklist-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.demo-checklist-dot.done { background: #4ADE80; }
+.demo-checklist-dot.active { background: var(--red); animation: pulse-red 2s infinite; }
+.demo-checklist-dot.pending { background: rgba(255,255,255,0.15); }
+@keyframes pulse-red {
+  0%,100% { box-shadow: 0 0 0 0 rgba(232,19,42,0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(232,19,42,0); }
+}
+.demo-main { padding: 28px; background: var(--white); }
+.demo-case-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+}
+.demo-doc-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 14px 16px; margin-bottom: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.demo-lawyer-panel {
+  background: var(--dark); border-radius: var(--r-lg); padding: 20px; margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .demo-dashboard-inner { grid-template-columns: 1fr; }
+  .demo-sidebar { display: none; }
+}
+
+/* ═══ STICKY MOBILE CTA ═══ */
+#mobile-sticky-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+  padding: 12px 16px; padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  background: var(--red); box-shadow: 0 -4px 20px rgba(232,19,42,0.3);
+}
+#mobile-sticky-cta .sticky-cta-inner {
+  display: flex; align-items: center; gap: 8px;
+}
+#mobile-sticky-cta .sticky-cta-btn {
+  flex: 1; background: white; color: var(--red); border: none;
+  padding: 14px 20px; border-radius: 100px; font-family: var(--font-body);
+  font-size: 15px; font-weight: 700; cursor: pointer; min-height: 48px;
+  letter-spacing: -0.01em;
+}
+#mobile-sticky-cta .sticky-cta-dismiss {
+  width: 36px; height: 36px; border: none; background: rgba(255,255,255,0.15);
+  border-radius: 50%; color: white; cursor: pointer; font-size: 18px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (max-width: 768px) {
+  #mobile-sticky-cta { display: none; } /* shown via JS */
+}
+
 /* ═══ FORMS ═══ */
 .form-group { margin-bottom: 18px; }
 .form-label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 600; color: var(--text-2); }
@@ -275,7 +501,7 @@ em { font-style: italic; color: var(--red); }
 
 /* HERO */
 .hero {
-  min-height: 100vh; padding: 80px 24px 60px;
+  min-height: 100vh; padding: 120px 24px 60px;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
 }
@@ -972,9 +1198,9 @@ footer {
       <i data-lucide="layout-dashboard" style="width:14px;height:14px"></i> View demo
     </button>
     <button class="btn btn-ghost btn-sm" onclick="showPage('auth');switchAuthTab('login')">Sign in</button>
-    <button class="btn btn-primary btn-sm" onclick="showPage('auth');switchAuthTab('register')">
+    <button class="btn btn-primary btn-sm" onclick="joinWaitlist()">
       <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
-      Get started free
+      Join waitlist
     </button>
     <button class="nav-menu-btn" id="nav-menu-btn" onclick="openMobileMenu()">
       <i data-lucide="menu"></i>
@@ -1013,8 +1239,8 @@ footer {
     </div>
     <div style="display:flex;flex-direction:column;gap:10px">
       <button class="btn btn-outline btn-full" onclick="closeMobileMenuDirect();showPage('auth');switchAuthTab('login')">Sign in</button>
-      <button class="btn btn-primary btn-full" onclick="closeMobileMenuDirect();scrollToSection('pricing')">
-        Get started <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+      <button class="btn btn-primary btn-full" onclick="closeMobileMenuDirect();joinWaitlist()">
+        Join the waitlist <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
       </button>
     </div>
   </div>
@@ -1024,6 +1250,15 @@ footer {
      LANDING PAGE
 ════════════════════════════ -->
 <div id="page-landing" class="page active">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="bar-text">
+      <div class="pulse-dot"></div>
+      <span>KartaFlow is now open — 20 founding spots · Follow <strong style="color:white">@kartaflow.pl</strong> on Instagram</span>
+    </div>
+    <button class="btn-bar" onclick="joinWaitlist()">Join waitlist →</button>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -1035,37 +1270,59 @@ footer {
           Poland's first &amp; only dedicated TRC platform
         </div>
         <h1 class="display-xl hero-title reveal reveal-delay-1">
-          The only platform<br>that handles your<br>TRC <em>entirely<br>online.</em>
+          The only platform that<br>prepares your TRC application<br><em>correctly.</em><br>Entirely <em>online.</em>
         </h1>
         <p class="hero-sub reveal reveal-delay-2">
-          No lawyer visits. No confusion. No overpaying. Create your account, get your personalised checklist, upload your documents — and a licensed immigration lawyer checks everything before you submit. Your entire process, managed in one dashboard.
+          <strong>No lawyer visits.</strong> <strong>No document guesswork.</strong> <strong>No overpaying.</strong> Get your personalised checklist, upload your documents, and have a licensed immigration lawyer verify everything — <em>before you submit to the immigration office.</em>
         </p>
-        <div class="hero-ctas reveal reveal-delay-3">
-          <button class="btn btn-primary btn-lg" onclick="showPage('auth');switchAuthTab('register')">
-            Create my free account
-            <i data-lucide="arrow-right"></i>
-          </button>
-          <button class="btn btn-outline btn-lg" onclick="openMartaChat()">
-            <i data-lucide="bot"></i>
-            Ask Marta AI
-          </button>
+
+        <!-- HERO WAITLIST -->
+        <div class="reveal reveal-delay-3" id="waitlist-hero">
+          <div class="hero-waitlist-badge">
+            <div class="badge-dot"></div>
+            20 founding member spots this month
+          </div>
+          <div class="hero-tally-wrap">
+            <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="160" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+          </div>
+          <div class="hero-form-microcopy">
+            <span><i data-lucide="shield" style="width:13px;height:13px;color:var(--text-3)"></i> Free to join</span>
+            <span>·</span>
+            <span><i data-lucide="zap" style="width:13px;height:13px;color:var(--text-3)"></i> Early access + founding price</span>
+            <span>·</span>
+            <span><i data-lucide="credit-card" style="width:13px;height:13px;color:var(--text-3)"></i> No credit card</span>
+          </div>
+          <div style="margin-top:4px">
+            <button class="btn btn-outline" onclick="loginDemo('client')" style="gap:9px">
+              <i data-lucide="layout-dashboard" style="width:15px;height:15px;color:var(--red)"></i>
+              See exactly how you'll manage your case
+              <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+            </button>
+            <div style="font-size:11px;color:var(--text-3);margin-top:7px;padding-left:4px">
+              Interactive dashboard · No sign-up needed
+            </div>
+          </div>
         </div>
         <div class="hero-trust reveal reveal-delay-4">
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            More convenient — 100% online
+            TRC rejection risks eliminated before you submit
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            Better priced — up to 10× cheaper
+            Reviewed by a real licensed lawyer — not AI, not a template
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            More structured — all steps in your dashboard
+            From 249 PLN — up to 10× less than a private law firm
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            English · Russian · Ukrainian support
+            100% online — no office visits, no appointments
+          </div>
+          <div class="trust-item">
+            <i data-lucide="check-circle"></i>
+            English · Russian · Ukrainian — fully supported
           </div>
         </div>
       </div>
@@ -1145,23 +1402,103 @@ footer {
     </div>
   </section>
 
+  <!-- FOUNDER REEL — Why KartaFlow exists -->
+  <section style="background:var(--dark);padding:64px 0 72px">
+    <div class="container">
+      <div class="reel-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:0 auto">
+
+        <!-- LEFT: framing copy -->
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:16px">
+            <i data-lucide="play-circle" style="width:13px;height:13px"></i>
+            Why KartaFlow exists
+          </span>
+          <h2 style="font-family:var(--font-display);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;color:white;margin-bottom:20px">
+            Most foreigners in Poland<br>are doing this <em>completely</em><br>on their own.
+          </h2>
+          <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:24px">
+            Foreigners in Poland deserve better than confusing offices, expensive lawyers, and rejections nobody warned them about. Olena saw it every day from her side. We saw it from ours. That's how KartaFlow was born.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Olena and her team at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">Legalno.pl</a> were already helping clients one-on-one with a 98% success rate — but their legal team can only handle so many cases a month</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Thousands of foreigners were being rejected for avoidable mistakes, stuck with unhelpful lawyers, paying thousands of PLN, and making trip after trip to the office — only to be told something was missing</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">So we came together to build KartaFlow — making Olena's expertise accessible to everyone, not just those who can afford a private lawyer, and doing it entirely online</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <a href="https://www.instagram.com/kartaflow.pl" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--r);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.8);text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s"
+               onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+               onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+              <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+              @kartaflow.pl
+            </a>
+            <button class="btn btn-primary" onclick="joinWaitlist()" style="font-size:13px;padding:10px 20px">
+              Join founding members <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT: Instagram reel embed -->
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <div style="width:100%;max-width:340px;border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08)">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DVONSozDJdZ/"
+              data-instgrm-version="14"
+              style="background:#000;border:0;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+              <!-- Fallback while embed loads -->
+              <div style="background:#111;padding:24px;text-align:center">
+                <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
+                  <i data-lucide="play" style="width:22px;height:22px;color:white;margin-left:3px"></i>
+                </div>
+                <div style="font-size:13px;font-weight:600;color:white;margin-bottom:6px">@kartaflow.pl</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px">Why KartaFlow was built — watch on Instagram</div>
+                <a href="https://www.instagram.com/reel/DVONSozDJdZ/" target="_blank" rel="noopener"
+                   style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;background:linear-gradient(135deg,#f09433,#bc1888);color:white;text-decoration:none;font-size:12px;font-weight:700">
+                  <i data-lucide="play-circle" style="width:13px;height:13px"></i> Watch Reel
+                </a>
+              </div>
+            </blockquote>
+          </div>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:8px">
+            <a href="https://www.instagram.com/kartaflow.pl" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none">
+              <i data-lucide="instagram" style="width:13px;height:13px;color:#E1306C"></i>
+              Follow <strong style="color:rgba(255,255,255,0.7)">@kartaflow.pl</strong> on Instagram
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROOF BAR -->
   <div class="proof-bar">
     <div class="proof-track">
-      <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> applications supported</div>
+      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong> — if your documents are right</div>
+      <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> cases approved by Olena's team</div>
       <div class="proof-item"><i data-lucide="star"></i><strong>98%</strong> success rate</div>
-      <div class="proof-item"><i data-lucide="shield"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
-      <div class="proof-item"><i data-lucide="clock"></i><strong>24h</strong> lawyer response guarantee</div>
-      <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian support</div>
-      <div class="proof-item"><i data-lucide="layout-dashboard"></i>Full process managed in your dashboard</div>
-      <div class="proof-item"><i data-lucide="piggy-bank"></i>Up to 10× cheaper than a private lawyer</div>
-      <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> applications supported</div>
+      <div class="proof-item"><i data-lucide="shield-check"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
+      <div class="proof-item"><i data-lucide="clock"></i><strong>24h</strong> lawyer review turnaround</div>
+      <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
+      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
+      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong> — if your documents are right</div>
+      <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> cases approved by Olena's team</div>
       <div class="proof-item"><i data-lucide="star"></i><strong>98%</strong> success rate</div>
-      <div class="proof-item"><i data-lucide="shield"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
-      <div class="proof-item"><i data-lucide="clock"></i><strong>24h</strong> lawyer response guarantee</div>
-      <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian support</div>
-      <div class="proof-item"><i data-lucide="layout-dashboard"></i>Full process managed in your dashboard</div>
-      <div class="proof-item"><i data-lucide="piggy-bank"></i>Up to 10× cheaper than a private lawyer</div>
+      <div class="proof-item"><i data-lucide="shield-check"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
+      <div class="proof-item"><i data-lucide="clock"></i><strong>24h</strong> lawyer review turnaround</div>
+      <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
+      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
     </div>
   </div>
 
@@ -1171,8 +1508,8 @@ footer {
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="zap" style="width:13px;height:13px"></i> Why KartaFlow</span>
       </div>
-      <h2 class="display-lg section-title reveal">Three ways we're<br><em>completely different.</em></h2>
-      <p class="section-sub reveal">Not another advice forum. Not a 3,000 PLN law firm. The only platform built end-to-end for TRC — online, affordable, and structured.</p>
+      <h2 class="display-lg section-title reveal">Most TRC rejections are<br><em>completely avoidable.</em></h2>
+      <p class="section-sub reveal">Most foreigners in Poland get rejected not because they're ineligible — but because of missing stamps, wrong document versions, or formatting errors. KartaFlow and Olena's team exist to make that impossible to happen to you.</p>
 
       <div class="diff-grid reveal">
         <!-- PILLAR 1 -->
@@ -1183,7 +1520,7 @@ footer {
           </div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">More convenient</div>
           <div style="font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:14px">100% online.<br>No lawyer visits.</div>
-          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Create your account and manage your entire TRC process from your personal dashboard — at any time, from anywhere. No office appointments, no back-and-forth emails.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">You manage your entire TRC preparation from your dashboard — at any hour, from any device, without booking a lawyer's appointment. Upload your documents once. Everything else is handled from there.</p>
         </div>
 
         <!-- PILLAR 2 -->
@@ -1194,7 +1531,7 @@ footer {
           </div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Better priced</div>
           <div style="font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:14px">Up to 10× cheaper<br>than a private lawyer.</div>
-          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Traditional immigration lawyers charge thousands of PLN. KartaFlow gives you the same licensed legal review, structured guidance, and lawyer feedback — from 249 PLN, one-time.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Olena's team was already charging 3,000–8,000 PLN per case working with clients directly. KartaFlow lets her help more people by making the process structured — so you get the same licensed lawyer review, from 249 PLN, one-time. Not hourly. Not a retainer.</p>
         </div>
 
         <!-- PILLAR 3 -->
@@ -1205,18 +1542,66 @@ footer {
           </div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">More structured</div>
           <div style="font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:14px">Every step clear<br>in your dashboard.</div>
-          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Your profile shows your personalised checklist, document status, lawyer feedback, and next steps — all in one place. No confusion, no missed requirements, no surprises.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Your checklist is built specifically for your case type. Every document is AI-checked before Olena sees it. Her feedback tells you exactly what to fix. You don't submit until it's right.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════
+       WAITLIST SECTION — PRIMARY
+  ══════════════════════════════ -->
+  <section class="section" id="waitlist-section" style="padding-top:80px;padding-bottom:80px">
+    <div class="container">
+      <div class="waitlist-inner">
+        <div style="text-align:center;margin-bottom:40px">
+          <span class="label-red reveal" style="margin-bottom:12px;display:inline-flex">
+            <i data-lucide="users" style="width:13px;height:13px"></i>
+            Early access · Founding members
+          </span>
+          <h2 class="display-lg reveal reveal-delay-1" style="color:white;margin-bottom:16px">
+            Get your TRC right<br>the <em>first time.</em>
+          </h2>
+          <p class="reveal reveal-delay-2" style="font-size:17px;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.65">
+            KartaFlow is open to founding members now. Join Olena's team on a platform built to make sure your application is lawyer-approved before you ever set foot in the Voivodeship office. 20 spots available this month — founding members get the best price we'll ever offer, locked in permanently.
+          </p>
+          <div class="waitlist-proof-pills reveal reveal-delay-3" style="justify-content:center;margin-top:24px">
+            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
+              <i data-lucide="users" style="width:13px;height:13px"></i> 20 founding spots this month
+            </div>
+            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
+              <i data-lucide="lock" style="width:13px;height:13px"></i> Founding price locked forever
+            </div>
+            <div class="waitlist-pill" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">
+              <i data-lucide="map-pin" style="width:13px;height:13px"></i> Poland's only TRC platform
+            </div>
+          </div>
+        </div>
+
+        <div class="waitlist-card reveal reveal-delay-2">
+          <div class="waitlist-card-header">
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:8px">Founding member · 20 spots this month</div>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.55;margin-bottom:0">Takes 30 seconds · No credit card · Free forever to join</p>
+          </div>
+          <div class="waitlist-card-body" style="padding-top:8px">
+            <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+          </div>
+        </div>
+
+        <p class="waitlist-microcopy reveal" style="color:rgba(255,255,255,0.35);margin-top:20px">
+          No spam. No commitment. Just early access and the best price we'll ever offer.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="how-it-works">
     <div class="container">
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="layers" style="width:13px;height:13px"></i> How it works</span>
       </div>
-      <h2 class="display-lg section-title reveal">Your entire TRC process,<br>managed in <em>one place.</em></h2>
-      <p class="section-sub reveal">Create your account. Follow your personalised checklist. Upload once. Let the lawyer handle the rest — all tracked in your dashboard, start to finish.</p>
+      <h2 class="display-lg section-title reveal">From confused to<br><em>lawyer-approved</em> in days.</h2>
+      <p class="section-sub reveal">No law firm visits. No document guesswork. No waiting weeks just to find out something was wrong. Your checklist is ready in minutes. Olena reviews your documents. You walk in prepared.</p>
 
       <div class="steps-grid reveal">
         <div class="step-card">
@@ -1225,7 +1610,7 @@ footer {
             <i data-lucide="user-plus"></i>
           </div>
           <div class="step-title">Create your free account</div>
-          <div class="step-desc">Sign up in 60 seconds. Answer a short intake about your situation. Your personal dashboard and exact document checklist are ready instantly.</div>
+          <div class="step-desc">Answer a short intake about your situation — takes 60 seconds. Your personalised checklist is generated instantly, showing exactly which documents apply to your case. Nothing generic.</div>
         </div>
         <div class="step-card">
           <div class="step-num">02</div>
@@ -1233,7 +1618,7 @@ footer {
             <i data-lucide="upload-cloud"></i>
           </div>
           <div class="step-title">Upload your documents</div>
-          <div class="step-desc">Your checklist shows precisely what you need. Our AI pre-checks every file before your lawyer sees it — no bad scans, no missing stamps.</div>
+          <div class="step-desc">Your checklist tells you precisely what to upload and why. Our AI pre-checks every file before Olena sees it — catching bad scans, wrong formats, or missing items before they become a rejection reason.</div>
         </div>
         <div class="step-card">
           <div class="step-num">03</div>
@@ -1241,7 +1626,7 @@ footer {
             <i data-lucide="scale"></i>
           </div>
           <div class="step-title">Lawyer reviews everything</div>
-          <div class="step-desc">A licensed Polish immigration lawyer personally reviews your documents and sends clear, written feedback — in English, Russian, or Ukrainian.</div>
+          <div class="step-desc">Olena or a direct member of her team personally reads every document you upload. You receive specific, written feedback — not a template, not a junior associate. A real licensed lawyer who has approved 2,400+ cases.</div>
         </div>
         <div class="step-card">
           <div class="step-num">04</div>
@@ -1249,13 +1634,36 @@ footer {
             <i data-lucide="send"></i>
           </div>
           <div class="step-title">Submit with confidence</div>
-          <div class="step-desc">Your application is lawyer-approved. Track everything from your profile. Walk into the Voivodeship office knowing everything is correct.</div>
+          <div class="step-desc">When Olena signs off, you're ready. Walk into the Voivodeship office knowing every document has been reviewed by a licensed immigration lawyer. No surprises. No rejections for avoidable reasons.</div>
+        </div>
+      </div>
+
+      <!-- COST OF DOING NOTHING -->
+      <div class="reveal cost-nothing-grid" style="background:linear-gradient(135deg,rgba(232,19,42,0.04),rgba(232,19,42,0.08));border:1.5px solid rgba(232,19,42,0.15);border-radius:var(--r-xl);padding:36px 40px;margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:12px">What happens without KartaFlow</div>
+          <h3 style="font-family:var(--font-display);font-size:clamp(20px,2.5vw,26px);font-weight:700;letter-spacing:-0.02em;line-height:1.25;margin-bottom:16px">The average TRC rejection adds <em>3–6 months</em> to your wait.</h3>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0">A rejection means reapplying from scratch, paying office fees again, and staying in legal limbo — sometimes losing your right to work while you wait. Most rejections are caused by document errors that a lawyer review would have caught in 24 hours.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
+            <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Wrong document version</strong> — the most common rejection reason. The Voivodeship won't tell you which one until after.</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
+            <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Missing employer stamp</strong> — technically optional in some cases, required in others. Unless you know which, assume required.</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
+            <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Expired or soon-expiring documents</strong> — accepted at intake, flagged at review. Application void.</div>
+          </div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
-        <button class="btn btn-primary btn-lg" onclick="showPage('auth');switchAuthTab('register')">
-          Create my free account <i data-lucide="arrow-right"></i>
+        <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
+          Join the waitlist <i data-lucide="arrow-right"></i>
         </button>
         <button class="btn btn-outline btn-lg" onclick="openMartaChat()">
           <i data-lucide="bot"></i> Ask Marta — AI assistant
@@ -1273,8 +1681,8 @@ footer {
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="tag" style="width:13px;height:13px"></i> Pricing</span>
       </div>
-      <h2 class="display-lg section-title reveal">A fraction of a private<br>lawyer. <em>The same result.</em></h2>
-      <p class="section-sub reveal">Every tier includes real lawyer review. Flat fee — no hourly billing, no hidden costs. Choose the depth of support you need.</p>
+      <h2 class="display-lg section-title reveal">Olena's review.<br><em>At a fraction of the cost.</em></h2>
+      <p class="section-sub reveal">Every tier includes Olena's personal legal review — the same standard her private clients pay 3,000–8,000 PLN for. Flat fee, one-time, no surprises. Choose how much support you need.</p>
 
       <div class="pricing-grid reveal" style="margin:0 auto">
         <!-- TIER 1 -->
@@ -1423,6 +1831,30 @@ footer {
           <div class="trust-item"><i data-lucide="check-circle"></i>No subscription — one-time payment</div>
           <div class="trust-item"><i data-lucide="check-circle"></i>Upgrade anytime</div>
         </div>
+
+        <!-- PRICING WAITLIST STRIP -->
+        <div class="pricing-waitlist-strip reveal">
+          <div>
+            <div class="label-red" style="margin-bottom:12px"><i data-lucide="clock" style="width:13px;height:13px"></i> Limited spots available</div>
+            <h3 style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,28px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:10px">
+              Not ready to commit yet?<br><em>Join free. Secure your founding price.</em>
+            </h3>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:20px">
+              Founding members get locked-in pricing and skip the queue when we launch publicly.
+            </p>
+            <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px">Founding member benefits</div>
+            <ul class="pricing-waitlist-benefits">
+              <li>First access when we launch publicly</li>
+              <li>Founding price locked in forever</li>
+              <li>Priority support from our legal team</li>
+              <li>Direct WhatsApp line to your lawyer</li>
+              <li>Zero spam · Unsubscribe anytime</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1433,8 +1865,8 @@ footer {
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="gift" style="width:13px;height:13px"></i> What you get</span>
       </div>
-      <h2 class="display-lg section-title reveal">Built different.<br><em>Priced fair.</em></h2>
-      <p class="section-sub reveal">KartaFlow is the only platform combining AI document checking, a licensed lawyer, and a personal case dashboard — in one place, at a flat fee. No hourly billing. No office visits. No confusion.</p>
+      <h2 class="display-lg section-title reveal">Everything you need.<br><em>Nothing you don't.</em></h2>
+      <p class="section-sub reveal">KartaFlow combines Olena's legal expertise with a purpose-built platform — AI pre-checks your documents before she reviews them, so her time goes on real feedback, not fixing basic errors. You get a licensed lawyer's approval at a structured, affordable price.</p>
 
       <div class="feature-grid">
         <div class="feature-card reveal reveal-delay-1">
@@ -1470,8 +1902,8 @@ footer {
       </div>
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
-        <button class="btn btn-primary btn-lg" onclick="showPage('auth');switchAuthTab('register')">
-          Start my application <i data-lucide="arrow-right"></i>
+        <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
+          Join the waitlist <i data-lucide="arrow-right"></i>
         </button>
         <a href="https://wa.me/48452069627" target="_blank" class="btn btn-lg" style="background:#25D366;color:white">
           <i data-lucide="message-circle"></i> Chat on WhatsApp
@@ -1480,18 +1912,332 @@ footer {
     </div>
   </section>
 
-  <!-- THE LEGAL HEART — replaces old lawyer + team sections -->
+  <!-- DEMO PREVIEW SECTION -->
+  <section class="section demo-preview-section" id="demo-preview">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="label-red"><i data-lucide="layout-dashboard" style="width:13px;height:13px"></i> Live demo preview</span>
+      </div>
+      <h2 class="display-lg section-title reveal">See exactly what your<br>dashboard <em>looks like.</em></h2>
+      <p class="section-sub reveal">This is exactly what you'll see when you join. Your documents, your checklist, Olena's feedback — all in one place. No email chains, no office visits, no guessing what's missing.</p>
+
+      <div class="demo-browser-chrome reveal">
+        <div class="demo-chrome-bar">
+          <div class="demo-chrome-dots">
+            <div class="demo-chrome-dot r"></div>
+            <div class="demo-chrome-dot y"></div>
+            <div class="demo-chrome-dot g"></div>
+          </div>
+          <div class="demo-chrome-url">kartaflow.pl · dashboard · #KF-2025-047</div>
+        </div>
+        <div class="demo-dashboard-inner">
+          <!-- Sidebar checklist -->
+          <div class="demo-sidebar">
+            <div class="demo-sidebar-header">Work TRC Application</div>
+            <div class="demo-sidebar-sub">#KF-2025-047 · Tier 2</div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:10px">Your checklist</div>
+            <div class="demo-checklist-item done"><div class="demo-checklist-dot done"></div>Valid passport</div>
+            <div class="demo-checklist-item done"><div class="demo-checklist-dot done"></div>Employment contract</div>
+            <div class="demo-checklist-item done"><div class="demo-checklist-dot done"></div>Employer's Annex</div>
+            <div class="demo-checklist-item done"><div class="demo-checklist-dot done"></div>Salary slips (3 months)</div>
+            <div class="demo-checklist-item active"><div class="demo-checklist-dot active"></div>Proof of accommodation</div>
+            <div class="demo-checklist-item pending"><div class="demo-checklist-dot pending"></div>Application form</div>
+            <div class="demo-checklist-item pending"><div class="demo-checklist-dot pending"></div>Biometric photo</div>
+            <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06)">
+              <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:6px">Progress</div>
+              <div style="height:5px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden">
+                <div style="width:57%;height:100%;background:var(--red);border-radius:100px"></div>
+              </div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:5px">4 of 7 documents ready</div>
+            </div>
+          </div>
+          <!-- Main area -->
+          <div class="demo-main">
+            <div class="demo-case-header">
+              <div>
+                <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;font-family:var(--font-display)">Work TRC Application</div>
+                <div style="font-size:13px;color:var(--text-3);margin-top:2px">Tier 2 · Guided · Started 3 days ago</div>
+              </div>
+              <span class="badge badge-amber" style="font-size:12px;padding:6px 12px">⚡ In Review</span>
+            </div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px">Document status</div>
+            <div class="demo-doc-card">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:32px;height:32px;border-radius:8px;background:rgba(74,222,128,0.1);display:flex;align-items:center;justify-content:center;font-size:14px">✅</div>
+                <div><div style="font-size:13px;font-weight:600">Passport</div><div style="font-size:11px;color:var(--text-3)">Valid · Expires 2028</div></div>
+              </div>
+              <span class="badge badge-green" style="font-size:11px">Approved</span>
+            </div>
+            <div class="demo-doc-card">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:32px;height:32px;border-radius:8px;background:rgba(74,222,128,0.1);display:flex;align-items:center;justify-content:center;font-size:14px">✅</div>
+                <div><div style="font-size:13px;font-weight:600">Employment Contract</div><div style="font-size:11px;color:var(--text-3)">Full-time · XYZ Sp. z o.o.</div></div>
+              </div>
+              <span class="badge badge-green" style="font-size:11px">Approved</span>
+            </div>
+            <div class="demo-doc-card" style="border-color:rgba(232,19,42,0.2);background:rgba(232,19,42,0.02)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:32px;height:32px;border-radius:8px;background:rgba(232,19,42,0.08);display:flex;align-items:center;justify-content:center">
+                  <i data-lucide="upload" style="width:15px;height:15px;color:var(--red)"></i>
+                </div>
+                <div><div style="font-size:13px;font-weight:600">Proof of Accommodation</div><div style="font-size:11px;color:var(--text-3)">Awaiting your upload</div></div>
+              </div>
+              <span class="badge badge-red" style="font-size:11px">Needed</span>
+            </div>
+            <div class="demo-lawyer-panel">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:white">OH</div>
+                <div>
+                  <div style="font-size:13px;font-weight:600;color:white">Olena Harkusha</div>
+                  <div style="font-size:11px;color:rgba(255,255,255,0.4)">Licensed Immigration Lawyer · Responded 2h ago</div>
+                </div>
+                <span style="margin-left:auto;font-size:11px;background:rgba(74,222,128,0.12);color:#4ADE80;padding:3px 10px;border-radius:100px;font-weight:600">Live feedback</span>
+              </div>
+              <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin:0">Your passport and contract look great. I need the zameldowanie (proof of address registration) before I can proceed. Upload that document and I'll complete my review within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:32px" class="reveal">
+        <p style="font-size:15px;color:var(--text-2);margin-bottom:20px;line-height:1.55">Like what you see? This is exactly what you'll get. Join the waitlist for early access.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
+            Join the waitlist → <i data-lucide="arrow-right"></i>
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="loginDemo('client')">
+            <i data-lucide="layout-dashboard"></i> Open interactive demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials" style="background:var(--white)">
+    <div class="container">
+      <div class="section-eyebrow">
+        <span class="label-red"><i data-lucide="star" style="width:13px;height:13px"></i> Real clients · Real results</span>
+      </div>
+      <h2 class="display-lg section-title reveal">People who got their<br>TRC <em>approved.</em></h2>
+      <p class="section-sub reveal">From Olena's clients — foreigners across Poland who went through the process and came out the other side with their residence card.</p>
+
+      <div class="testimonials-grid reveal">
+
+        <!-- TESTIMONIAL 1 — African client, Work TRC -->
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"I spent four months trying to figure this out on my own — different Facebook groups, contradictory advice, two trips to the Voivodeship office for nothing. Olena looked at my documents and within 24 hours told me exactly what was wrong and what I needed. Third attempt, first time with her — approved. I wish I had found her at the start."</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:var(--red-soft);color:var(--red)">TM</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text)">Tendai Mpofu</div>
+              <div style="font-size:12px;color:var(--text-3)">Work TRC · Warsaw · Zimbabwe</div>
+            </div>
+            <span style="margin-left:auto;font-size:11px;font-weight:600;color:var(--success);background:rgba(22,163,74,0.08);padding:4px 10px;border-radius:100px;border:1px solid rgba(22,163,74,0.15)">
+              <i data-lucide="check-circle" style="width:11px;height:11px;vertical-align:-1px"></i> Approved
+            </span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 2 — Ukrainian client, Family TRC -->
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Подавала документи на карту побиту вперше і дуже боялась помилитись. Олена перевірила кожен документ, написала чіткий фідбек що виправити, і пояснила чому. Жодного розмитого "можливо треба" — конкретно і по ділу. Карту отримала з першого разу. Рекомендую всім, хто втомився від здогадок."</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:rgba(59,130,246,0.1);color:#3B82F6">OB</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text)">Оксана Білик</div>
+              <div style="font-size:12px;color:var(--text-3)">Family TRC · Kraków · Ukraine</div>
+            </div>
+            <span style="margin-left:auto;font-size:11px;font-weight:600;color:var(--success);background:rgba(22,163,74,0.08);padding:4px 10px;border-radius:100px;border:1px solid rgba(22,163,74,0.15)">
+              <i data-lucide="check-circle" style="width:11px;height:11px;vertical-align:-1px"></i> Approved
+            </span>
+          </div>
+        </div>
+
+        <!-- TESTIMONIAL 3 — Russian client, Work TRC Business -->
+        <div class="testimonial-card">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"До этого платил юристу 4500 злотых — он просто взял документы и пропал на три недели. С Оленой всё иначе: прислал документы, на следующий день получил подробный письменный разбор. Два замечания, исправил, подал. Карту получил. Вся работа заняла меньше двух недель. Разница огромная."</p>
+          <div class="testimonial-author">
+            <div class="avatar" style="background:rgba(168,85,247,0.1);color:#A855F7">DK</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--text)">Дмитрий Козлов</div>
+              <div style="font-size:12px;color:var(--text-3)">Work TRC · Wrocław · Russia</div>
+            </div>
+            <span style="margin-left:auto;font-size:11px;font-weight:600;color:var(--success);background:rgba(22,163,74,0.08);padding:4px 10px;border-radius:100px;border:1px solid rgba(22,163,74,0.15)">
+              <i data-lucide="check-circle" style="width:11px;height:11px;vertical-align:-1px"></i> Approved
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- INSTAGRAM POST PREVIEWS -->
+      <div class="reveal" style="margin-top:48px">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px">See Olena's client results — live from Instagram</div>
+          <div style="font-size:13px;color:var(--text-3)">Real posts from <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:var(--red);font-weight:600;text-decoration:none">@legal_trc_poland</a> — click any post to view on Instagram</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto">
+
+          <!-- Post 1 -->
+          <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--white)">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DSlL-wCDV0I/"
+              data-instgrm-version="14"
+              style="background:#FFF;border:0;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+              <div style="padding:16px">
+                <a href="https://www.instagram.com/p/DSlL-wCDV0I/" target="_blank" rel="noopener"
+                   style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center">
+                    <i data-lucide="instagram" style="width:18px;height:18px;color:white"></i>
+                  </div>
+                  <div>
+                    <div style="font-size:13px;font-weight:700">@legal_trc_poland</div>
+                    <div style="font-size:11px;color:var(--text-3)">Olena Harkusha · Radca Prawny</div>
+                  </div>
+                  <i data-lucide="external-link" style="width:13px;height:13px;color:var(--text-3);margin-left:auto"></i>
+                </a>
+                <div style="margin-top:12px;height:2px;background:linear-gradient(90deg,#f09433,#bc1888);border-radius:2px;opacity:0.4"></div>
+                <p style="font-size:12px;color:var(--text-3);margin-top:10px;line-height:1.5">Loading post preview…</p>
+              </div>
+            </blockquote>
+          </div>
+
+          <!-- Post 2 -->
+          <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--white)">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DR7ba_2Da5U/"
+              data-instgrm-version="14"
+              style="background:#FFF;border:0;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+              <div style="padding:16px">
+                <a href="https://www.instagram.com/p/DR7ba_2Da5U/" target="_blank" rel="noopener"
+                   style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center">
+                    <i data-lucide="instagram" style="width:18px;height:18px;color:white"></i>
+                  </div>
+                  <div>
+                    <div style="font-size:13px;font-weight:700">@legal_trc_poland</div>
+                    <div style="font-size:11px;color:var(--text-3)">Olena Harkusha · Radca Prawny</div>
+                  </div>
+                  <i data-lucide="external-link" style="width:13px;height:13px;color:var(--text-3);margin-left:auto"></i>
+                </a>
+                <div style="margin-top:12px;height:2px;background:linear-gradient(90deg,#f09433,#bc1888);border-radius:2px;opacity:0.4"></div>
+                <p style="font-size:12px;color:var(--text-3);margin-top:10px;line-height:1.5">Loading post preview…</p>
+              </div>
+            </blockquote>
+          </div>
+
+          <!-- Post 3 -->
+          <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--white)">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DJmIDTrtiNu/"
+              data-instgrm-version="14"
+              style="background:#FFF;border:0;margin:0;max-width:100%;min-width:0;padding:0;width:100%">
+              <div style="padding:16px">
+                <a href="https://www.instagram.com/p/DJmIDTrtiNu/" target="_blank" rel="noopener"
+                   style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center">
+                    <i data-lucide="instagram" style="width:18px;height:18px;color:white"></i>
+                  </div>
+                  <div>
+                    <div style="font-size:13px;font-weight:700">@legal_trc_poland</div>
+                    <div style="font-size:11px;color:var(--text-3)">Olena Harkusha · Radca Prawny</div>
+                  </div>
+                  <i data-lucide="external-link" style="width:13px;height:13px;color:var(--text-3);margin-left:auto"></i>
+                </a>
+                <div style="margin-top:12px;height:2px;background:linear-gradient(90deg,#f09433,#bc1888);border-radius:2px;opacity:0.4"></div>
+                <p style="font-size:12px;color:var(--text-3);margin-top:10px;line-height:1.5">Loading post preview…</p>
+              </div>
+            </blockquote>
+          </div>
+
+        </div>
+        <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:20px">
+          Follow <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:var(--red);font-weight:600">@legal_trc_poland</a> to see more client results from Olena's team
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF STRIP — Olena's public content -->
+  <div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
+        <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);white-space:nowrap">
+          Olena's expertise, publicly verified
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <a href="https://www.instagram.com/reel/DS-AZsMDSmT/" target="_blank" rel="noopener" class="btn btn-sm btn-surface" style="gap:7px;font-size:13px">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            TRC common mistakes
+          </a>
+          <a href="https://www.instagram.com/reel/DVV_GeNjL0a/" target="_blank" rel="noopener" class="btn btn-sm btn-surface" style="gap:7px;font-size:13px">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Step-by-step TRC guide
+          </a>
+          <a href="https://www.instagram.com/p/DSlL-wCDV0I/" target="_blank" rel="noopener" class="btn btn-sm btn-surface" style="gap:7px;font-size:13px">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Document checklist tips
+          </a>
+          <a href="https://www.instagram.com/p/DR7ba_2Da5U/" target="_blank" rel="noopener" class="btn btn-sm btn-surface" style="gap:7px;font-size:13px">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Rejection reasons explained
+          </a>
+          <a href="https://www.instagram.com/p/DJmIDTrtiNu/" target="_blank" rel="noopener" class="btn btn-sm btn-surface" style="gap:7px;font-size:13px">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Work TRC walkthrough
+          </a>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);display:flex;align-items:center;gap:4px;white-space:nowrap">
+          <i data-lucide="external-link" style="width:11px;height:11px"></i>
+          All posts link to Olena's real account
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE TEAM BEHIND EVERY REVIEW -->
   <section class="section" id="our-lawyer" style="background:var(--off-white)">
     <div class="container">
       <div class="lawyer-section reveal">
         <div>
-          <span class="label-xs" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:20px;letter-spacing:0.12em;text-transform:uppercase;font-size:11px">The legal heart of KartaFlow</span>
+          <span class="label-xs" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:20px;letter-spacing:0.12em;text-transform:uppercase;font-size:11px">The team behind every review</span>
           <div class="lawyer-badge">OH</div>
           <div class="lawyer-name">Olena Harkusha</div>
-          <div class="lawyer-title">Licensed Immigration Lawyer (Radca Prawny) · Poland</div>
+          <div class="lawyer-title">Licensed Immigration Lawyer (Radca Prawny) · 2,400+ cases · 98% success rate</div>
           <p class="lawyer-desc">
-            Olena is a qualified Polish immigration specialist with deep experience helping foreigners navigate the Polish residence permit system. She personally reviews every document submitted through KartaFlow — not a junior, not a template. You get direct access to the lawyer who knows exactly what each Voivodeship needs to approve your application.
+            Olena Harkusha has been one of Poland's most trusted immigration lawyers long before KartaFlow existed — helping foreigners navigate TRC applications through her practice at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">legalnopl.com</a> and educating the community through <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">@legal_trc_poland</a>. When we came together, we found we were solving the same problem from different angles — she was limited by how many cases one lawyer can personally handle each month, and we were building the structure to change that. KartaFlow is what happens when you combine her legal expertise with a purpose-built platform. Same lawyer. Same standard. Now accessible to far more people.
           </p>
+
+          <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px 20px;margin-bottom:24px">
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px">Why we built KartaFlow together</div>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin:0">
+              Olena could only take on a limited number of cases each month — and every case she couldn't reach meant another foreigner navigating the process alone, often getting it wrong. Together we built KartaFlow to change that. By structuring the document collection, AI pre-checking, and review workflow, we made it possible for Olena's team to help more people at a significantly lower price — without cutting corners on the legal standard. Same expertise. More people reached. Better organised for everyone.
+            </p>
+          </div>
+
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <a href="https://www.legalnopl.com/" target="_blank" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8)">
               <i data-lucide="globe" style="width:14px;height:14px"></i> legalnopl.com
@@ -1508,31 +2254,31 @@ footer {
         </div>
         <div class="lawyer-right">
           <div class="lawyer-feature">
-            <div class="lawyer-feature-icon"><i data-lucide="file-search"></i></div>
+            <div class="lawyer-feature-icon"><i data-lucide="user-check"></i></div>
             <div>
-              <div class="lawyer-feature-title">Document-by-document review</div>
-              <div class="lawyer-feature-desc">Every file you upload is read individually. You receive specific, actionable feedback — not a generic checklist or template reply.</div>
+              <div class="lawyer-feature-title">Olena reviews every case personally</div>
+              <div class="lawyer-feature-desc">No junior associates, no templates. Olena or a direct member of her team reads your documents and provides written feedback specific to your case.</div>
             </div>
           </div>
           <div class="lawyer-feature">
-            <div class="lawyer-feature-icon"><i data-lucide="shield-check"></i></div>
+            <div class="lawyer-feature-icon"><i data-lucide="star"></i></div>
             <div>
-              <div class="lawyer-feature-title">Protected legal relationship</div>
-              <div class="lawyer-feature-desc">You sign a formal engagement letter. This creates a real lawyer-client relationship protected by Polish law.</div>
+              <div class="lawyer-feature-title">2,400+ successful applications</div>
+              <div class="lawyer-feature-desc">Her team's track record is public — documented across hundreds of cases and a community of followers who share their results openly.</div>
             </div>
           </div>
           <div class="lawyer-feature">
-            <div class="lawyer-feature-icon"><i data-lucide="phone-call"></i></div>
+            <div class="lawyer-feature-icon"><i data-lucide="instagram"></i></div>
             <div>
-              <div class="lawyer-feature-title">Strategy calls (Tier 3)</div>
-              <div class="lawyer-feature-desc">On the top tier, you get a 1-on-1 video call with Olena to discuss your case and strategy before submitting.</div>
+              <div class="lawyer-feature-title">Verified on Instagram · @legal_trc_poland</div>
+              <div class="lawyer-feature-desc">Olena has been publicly educating foreigners in Poland on TRC rules, common rejections, and document requirements. Follow her account to see the depth of expertise behind every review.</div>
             </div>
           </div>
           <div class="lawyer-feature">
-            <div class="lawyer-feature-icon"><i data-lucide="refresh-cw"></i></div>
+            <div class="lawyer-feature-icon"><i data-lucide="trending-up"></i></div>
             <div>
-              <div class="lawyer-feature-title">Multiple review cycles</div>
-              <div class="lawyer-feature-desc">If changes are needed, you revise and resubmit. Your lawyer reviews again until everything is correct.</div>
+              <div class="lawyer-feature-title">Same excellence, now more accessible</div>
+              <div class="lawyer-feature-desc">KartaFlow doesn't change how Olena works — it gives her team the structure to help more people, faster, without the overhead of traditional legal consultations.</div>
             </div>
           </div>
           <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;gap:10px">
@@ -1569,20 +2315,41 @@ footer {
           Poland's only dedicated TRC platform
         </div>
         <h2 class="cta-title">Your residency.<br>Finally handled properly.</h2>
-        <p class="cta-sub">Create your free account. Get your personalised checklist. Have a licensed lawyer approve your documents. Manage everything from your dashboard — no office visits, no confusion, no overpaying.</p>
-        <div class="cta-btns">
-          <button class="btn btn-primary btn-lg" onclick="showPage('auth');switchAuthTab('register')">
-            Create my free account
-            <i data-lucide="arrow-right"></i>
-          </button>
-          <button class="btn btn-lg" onclick="openMartaChat()" style="background:rgba(255,255,255,0.1);color:white;border:1.5px solid rgba(255,255,255,0.2)">
+        <p class="cta-sub">Most TRC rejections happen because of avoidable document errors. Olena's team has a 98% success rate because they catch those errors before you submit. Join as a founding member — 20 spots available this month, at the best price we'll ever offer.</p>
+        <div style="max-width:500px;margin:0 auto 16px">
+          <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px">20 founding spots this month · Zero spam · Unsubscribe anytime</p>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href="https://www.instagram.com/kartaflow.pl" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s"
+             onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Follow @kartaflow.pl
+          </a>
+          <span style="color:rgba(255,255,255,0.2)">·</span>
+          <a href="https://www.instagram.com/legal_trc_poland" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s"
+             onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+            <i data-lucide="instagram" style="width:14px;height:14px;color:#E1306C"></i>
+            Follow @legal_trc_poland
+          </a>
+          <span style="color:rgba(255,255,255,0.2)">·</span>
+          <a href="https://wa.me/48452069627" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s"
+             onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+            <i data-lucide="message-circle" style="width:14px;height:14px;color:#25D366"></i>
+            WhatsApp us
+          </a>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-lg" onclick="openMartaChat()" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);border:1.5px solid rgba(255,255,255,0.15)">
             <i data-lucide="bot"></i> Ask Marta AI
           </button>
           <a href="https://wa.me/48452069627" target="_blank" class="btn btn-lg" style="background:rgba(37,211,102,0.15);color:#4ADE80;border:1.5px solid rgba(37,211,102,0.3)">
             <i data-lucide="message-circle"></i> WhatsApp us
           </a>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:20px">Free to join · Pay only when you're ready · Full refund within 24h</p>
       </div>
     </div>
   </section>
@@ -1595,6 +2362,26 @@ footer {
           <div class="footer-logo">Karta<span style="color:var(--red)">Flow</span></div>
           <p class="footer-desc">Poland's first dedicated TRC platform. Structured immigration support with a licensed lawyer — faster, cheaper, and more accurate than anything else.</p>
           <div class="footer-flag"><div class="footer-flag-white"></div><div class="footer-flag-red"></div></div>
+          <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
+            <a href="https://www.instagram.com/kartaflow.pl" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-3);text-decoration:none;padding:6px 12px;border-radius:var(--r);border:1px solid var(--border);transition:all 0.2s"
+               onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(225,48,108,0.4)'"
+               onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">
+              <i data-lucide="instagram" style="width:13px;height:13px;color:#E1306C"></i> @kartaflow.pl
+            </a>
+            <a href="https://www.instagram.com/legal_trc_poland" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-3);text-decoration:none;padding:6px 12px;border-radius:var(--r);border:1px solid var(--border);transition:all 0.2s"
+               onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(225,48,108,0.4)'"
+               onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">
+              <i data-lucide="instagram" style="width:13px;height:13px;color:#E1306C"></i> @legal_trc_poland
+            </a>
+            <a href="https://wa.me/48452069627" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-3);text-decoration:none;padding:6px 12px;border-radius:var(--r);border:1px solid var(--border);transition:all 0.2s"
+               onmouseover="this.style.color='var(--text)';this.style.borderColor='rgba(37,211,102,0.4)'"
+               onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">
+              <i data-lucide="message-circle" style="width:13px;height:13px;color:#25D366"></i> WhatsApp
+            </a>
+          </div>
           <div style="font-size:12px;color:var(--text-4)">Legal services by Olena Harkusha<br>Licensed immigration lawyer · Poland</div>
           <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
             <a href="https://wa.me/48452069627" target="_blank" class="btn btn-sm" style="background:#25D366;color:white;padding:7px 14px">
@@ -3104,7 +3891,7 @@ function sendMartaMsg(text) {
     // Add follow-up quick replies
     msgs.innerHTML += `
       <div class="marta-quick-replies" style="padding:0;margin-top:4px">
-        <button class="marta-qr" onclick="showPage('auth');switchAuthTab('register');toggleMartaChat()">Create account →</button>
+        <button class="marta-qr" onclick="joinWaitlist();toggleMartaChat()">Join waitlist →</button>
         <button class="marta-qr" onclick="martaQuickReply(this,'How much does KartaFlow cost?')">See pricing</button>
         <a href="https://wa.me/48452069627" target="_blank" class="marta-qr" style="text-decoration:none;display:inline-flex;align-items:center;gap:4px">💬 WhatsApp us</a>
       </div>`;
@@ -3113,5 +3900,101 @@ function sendMartaMsg(text) {
   }, 1200);
 }
 </script>
+
+<!-- ════════════════════════════
+     WAITLIST MODAL
+════════════════════════════ -->
+<div class="modal-overlay" id="waitlist-modal-overlay">
+  <div id="waitlist-modal" style="background:var(--white);border-radius:var(--r-xl);padding:44px 40px 36px;max-width:560px;width:100%;box-shadow:var(--shadow-lg);position:relative;animation:modal-in 0.3s var(--ease-out)">
+    <button class="modal-close" onclick="closeWaitlistModal()" aria-label="Close">
+      <i data-lucide="x" style="width:16px;height:16px"></i>
+    </button>
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Limited founding member spots</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:12px">Don't leave without<br>your spot.</h2>
+    <p style="font-size:15px;color:var(--text-2);line-height:1.6;margin-bottom:20px">Olena personally reviews every case. We're opening 20 founding member spots this month — get first access and the best price we'll ever offer.</p>
+    <iframe data-tally-src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="480" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+    <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:12px">Takes 30 seconds · No credit card · Free forever to join</p>
+  </div>
+</div>
+
+<!-- MOBILE STICKY CTA -->
+<div id="mobile-sticky-cta">
+  <div class="sticky-cta-inner">
+    <button class="sticky-cta-btn" onclick="joinWaitlist()">Join the Founding Members Waitlist →</button>
+    <button class="sticky-cta-dismiss" onclick="dismissMobileStickyCta()" aria-label="Dismiss">×</button>
+  </div>
+</div>
+
+<script>
+// ─── JOINWAITLIST HELPER ───
+function joinWaitlist() {
+  const section = document.getElementById('waitlist-section');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// ─── WAITLIST MODAL (scroll 60%, once per session) ───
+function openWaitlistModal() {
+  if (sessionStorage.getItem('waitlistModalShown')) return;
+  sessionStorage.setItem('waitlistModalShown', '1');
+  const overlay = document.getElementById('waitlist-modal-overlay');
+  if (overlay) {
+    overlay.classList.add('open');
+    setTimeout(() => { lucide.createIcons(); }, 50);
+  }
+}
+
+function closeWaitlistModal() {
+  const overlay = document.getElementById('waitlist-modal-overlay');
+  if (overlay) overlay.classList.remove('open');
+}
+
+// Close modal on overlay click
+document.getElementById('waitlist-modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeWaitlistModal();
+});
+
+// Scroll 60% trigger
+let waitlistModalTriggered = false;
+window.addEventListener('scroll', function() {
+  if (waitlistModalTriggered) return;
+  const scrolled = window.scrollY + window.innerHeight;
+  const total = document.documentElement.scrollHeight;
+  if (scrolled / total >= 0.6) {
+    waitlistModalTriggered = true;
+    // Small delay so it doesn't feel abrupt
+    setTimeout(openWaitlistModal, 600);
+  }
+}, { passive: true });
+
+// ─── MOBILE STICKY CTA (IntersectionObserver on hero) ───
+function dismissMobileStickyCta() {
+  const el = document.getElementById('mobile-sticky-cta');
+  if (el) el.style.display = 'none';
+  sessionStorage.setItem('mobileStickyDismissed', '1');
+}
+
+if (window.innerWidth <= 768 && !sessionStorage.getItem('mobileStickyDismissed')) {
+  const heroSection = document.querySelector('.hero');
+  if (heroSection && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(function(entries) {
+      const stickyCta = document.getElementById('mobile-sticky-cta');
+      if (!stickyCta) return;
+      // Show sticky when hero is NOT visible (user scrolled past)
+      stickyCta.style.display = entries[0].isIntersecting ? 'none' : 'block';
+    }, { threshold: 0.1 });
+    obs.observe(heroSection);
+  }
+}
+
+// ─── ANNOUNCEMENT BAR: push content down for fixed nav ───
+// The announcement bar is inside the page flow (not fixed), so no extra offset needed
+</script>
+
+<!-- TALLY EMBED SCRIPT (only once) -->
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
