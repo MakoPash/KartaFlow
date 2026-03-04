@@ -269,9 +269,71 @@ em { font-style: italic; color: var(--red); }
   .cost-nothing-grid { grid-template-columns: 1fr !important; gap: 24px !important; padding: 28px 20px !important; }
 }
 
+/* ─── MOBILE MODAL: full-height bottom sheet ─── */
 @media (max-width: 768px) {
-  #waitlist-modal-overlay { padding: 0; align-items: flex-end; overflow-y: auto; }
-  #waitlist-modal { border-radius: 28px 28px 0 0; max-width: 100%; padding: 32px 20px 40px; animation: sheet-up 0.35s var(--ease-out); }
+  /* Overlay: cover full screen, no centering */
+  #waitlist-modal-overlay {
+    padding: 0 !important;
+    align-items: flex-end !important;
+    overflow: hidden !important;
+  }
+
+  /* Sheet: slides up, full height, scrollable body */
+  #waitlist-modal {
+    border-radius: 20px 20px 0 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    /* Full dynamic viewport height so URL bar doesn't cut it off */
+    height: 92dvh !important;
+    max-height: 92dvh !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    animation: sheet-up 0.35s var(--ease-out) !important;
+  }
+
+  /* Sticky close bar — always visible at top of sheet */
+  #waitlist-modal-close-bar {
+    display: flex !important;
+  }
+
+  /* Hide close button that's inside the scroll area on mobile */
+  #waitlist-modal > .modal-close {
+    display: none !important;
+  }
+
+  /* Scrollable content area */
+  #waitlist-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: 20px 20px 40px;
+  }
+
+  /* Hide description text + bullets on mobile — form first */
+  #waitlist-modal-desc {
+    display: none !important;
+  }
+
+  /* iframe: remove min-height so it fits the sheet */
+  #waitlist-modal iframe {
+    min-height: 0 !important;
+    height: 480px !important;
+  }
+}
+
+/* Desktop: close bar hidden, normal modal */
+#waitlist-modal-close-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: 20px 20px 0 0;
 }
 
 /* ═══ ANNOUNCEMENT BAR ═══ */
@@ -4262,24 +4324,47 @@ function sendMartaMsg(text) {
 ════════════════════════════ -->
 <div class="modal-overlay" id="waitlist-modal-overlay">
   <div id="waitlist-modal" style="background:var(--white);border-radius:var(--r-xl);padding:44px 40px 36px;max-width:560px;width:100%;box-shadow:var(--shadow-lg);position:relative;animation:modal-in 0.3s var(--ease-out);max-height:90vh;overflow-y:auto">
+
+    <!-- Sticky close bar (mobile only) -->
+    <div id="waitlist-modal-close-bar">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto"></div>
+      </div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red)">20 spots left</div>
+      <button onclick="closeWaitlistModal()" aria-label="Close" style="width:36px;height:36px;border-radius:50%;background:var(--surface);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-2)">
+        <i data-lucide="x" style="width:16px;height:16px"></i>
+      </button>
+    </div>
+
+    <!-- Desktop close button -->
     <button class="modal-close" onclick="closeWaitlistModal()" aria-label="Close">
       <i data-lucide="x" style="width:16px;height:16px"></i>
     </button>
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Early Access · 20 founding member spots left</div>
-    <h2 style="font-family:var(--font-display);font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px">Fill in this form.<br>Here's what you get.</h2>
-    <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:14px">You're one of the first to use KartaFlow when it launches — and for that, you get the lowest price we'll ever charge, locked in forever.</p>
-    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
-      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Founding price — locked in forever.</strong> The lowest KartaFlow will ever charge, even if you start in 3 months.</span></div>
-      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>First in line.</strong> Priority access when KartaFlow opens publicly.</span></div>
-      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Personal document checklist</strong> — generated for your specific case after sign-up.</span></div>
-      <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Direct WhatsApp to our legal team</strong> — ask anything, before you pay a single zloty.</span></div>
+
+    <!-- Scrollable body -->
+    <div id="waitlist-modal-body">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Early Access · 20 founding member spots left</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px">Fill in this form.<br>Here's what you get.</h2>
+
+      <!-- Description — hidden on mobile -->
+      <div id="waitlist-modal-desc">
+        <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:14px">You're one of the first to use KartaFlow when it launches — and for that, you get the lowest price we'll ever charge, locked in forever.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Founding price — locked in forever.</strong> The lowest KartaFlow will ever charge, even if you start in 3 months.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>First in line.</strong> Priority access when KartaFlow opens publicly.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Personal document checklist</strong> — generated for your specific case after sign-up.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Direct WhatsApp to our legal team</strong> — ask anything, before you pay a single zloty.</span></div>
+        </div>
+      </div>
+
+      <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="560" style="min-height:560px" frameborder="0" marginheight="0" marginwidth="0" allow="fullscreen" title="Join the KartaFlow Early Access"></iframe>
+      <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
+        <i data-lucide="lock" style="width:11px;height:11px"></i>
+        Your data stays private. Never shared. Stored securely in the EU.
+      </p>
+      <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:12px">Takes 30 seconds · No credit card · No payment today · Free forever to join</p>
     </div>
-    <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="560" style="min-height:560px" frameborder="0" marginheight="0" marginwidth="0" allow="fullscreen" title="Join the KartaFlow Early Access"></iframe>
-    <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
-      <i data-lucide="lock" style="width:11px;height:11px"></i>
-      Your data stays private. Never shared. Stored securely in the EU.
-    </p>
-    <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:12px">Takes 30 seconds · No credit card · No payment today · Free forever to join</p>
+
   </div>
 </div>
 
@@ -4307,6 +4392,7 @@ function openWaitlistModal() {
   const overlay = document.getElementById('waitlist-modal-overlay');
   if (overlay) {
     overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
     setTimeout(() => { lucide.createIcons(); }, 50);
   }
 }
@@ -4314,6 +4400,7 @@ function openWaitlistModal() {
 function closeWaitlistModal() {
   const overlay = document.getElementById('waitlist-modal-overlay');
   if (overlay) overlay.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 // Close modal on overlay click
