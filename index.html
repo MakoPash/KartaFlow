@@ -1209,33 +1209,80 @@ html, body {
   }
 }
 
-/* FIX 4 — Lawyer/Olena card: fix overflow + padding */
+/* FIX 4 — Lawyer/Olena card: full mobile rebuild */
 @media (max-width: 768px) {
+
+  /* A: Section wrapper — reduce side padding so card has more room */
+  #our-lawyer {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* B: Dark card — no side padding, let child divs handle it */
   .lawyer-section {
-    padding: 28px 20px !important;
+    padding: 24px 0 !important;
     border-radius: 20px !important;
     overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* C: Each direct child column gets its own side padding */
+  .lawyer-section > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* D: Inner "lawyer-right" feature card — reduce padding */
+  .lawyer-right {
+    padding: 16px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  /* E: "Why we built" sub-card — reliable override */
+  .lawyer-section > div > div[style*="background:rgba"] {
+    padding: 14px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  /* F: Name and title text */
+  .lawyer-name {
+    font-size: 24px !important;
+  }
+  .lawyer-title {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
   .lawyer-desc {
     font-size: 14px !important;
     line-height: 1.65 !important;
   }
-  /* The "Why we built" inner sub-card */
-  .lawyer-section div[style*="background:rgba(255,255,255,0.05)"] {
-    padding: 16px !important;
-  }
-  /* Stats grid: 3-col is too cramped on mobile */
+
+  /* G: Stats grid */
   .lawyer-stats {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
   .lawyer-stat-num {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
   .lawyer-stat-label {
-    font-size: 11px !important;
+    font-size: 10px !important;
   }
-  /* Feature items already stack (flex column) — just tighten spacing */
+
+  /* H: Feature items */
   .lawyer-feature {
     gap: 10px !important;
     margin-bottom: 16px !important;
@@ -1245,8 +1292,10 @@ html, body {
   }
   .lawyer-feature-desc {
     font-size: 12px !important;
+    line-height: 1.5 !important;
   }
-  /* Button row in Olena section */
+
+  /* I: Button row — stack vertically */
   .lawyer-section .btn.btn-primary.btn-sm {
     width: 100% !important;
     justify-content: center !important;
@@ -1257,7 +1306,7 @@ html, body {
     gap: 8px !important;
   }
   .lawyer-section .btn.btn-outline {
-    flex: 1 !important;
+    width: 100% !important;
     justify-content: center !important;
   }
 }
