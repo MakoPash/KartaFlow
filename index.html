@@ -341,10 +341,12 @@ em { font-style: italic; color: var(--red); }
     display: none !important;
   }
 
-  /* iframe: remove min-height so it fits the sheet */
-  #waitlist-modal iframe {
+  /* Native form: fits the sheet naturally */
+  #waitlist-modal #kf-form-wrap {
     min-height: 0 !important;
-    height: 480px !important;
+  }
+  #kf-waitlist-form input, #kf-hero-form input {
+    font-size: 16px !important; /* prevent iOS zoom on focus */
   }
 }
 
@@ -2176,7 +2178,47 @@ html, body {
             <p style="font-size:15px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0">Free to sign up. 30 seconds. Your lifetime discount is locked in the moment you submit.</p>
           </div>
           <div class="waitlist-card-body" style="padding-top:8px">
-            <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="600" style="min-height:600px" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
+            <div id="kf-hero-form-wrap">
+              <form id="kf-hero-form" onsubmit="kfSubmitHero(event)">
+                <div style="margin-bottom:14px">
+                  <label style="display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:7px">Your email address <span style="color:var(--red)">*</span></label>
+                  <input type="email" id="kf-hero-email" required placeholder="you@email.com"
+                    style="width:100%;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;font-size:15px;font-family:var(--font-body);outline:none;transition:border-color 0.2s;box-sizing:border-box;background:rgba(255,255,255,0.1);color:white;-webkit-text-fill-color:white"
+                    onfocus="this.style.borderColor='rgba(255,255,255,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'"
+                    placeholder="you@email.com">
+                </div>
+                <button type="submit" id="kf-hero-btn"
+                  style="width:100%;padding:15px;background:var(--red);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;font-family:var(--font-body);cursor:pointer;transition:background 0.2s;letter-spacing:-0.01em">
+                  Join early access — lock in lifetime discount →
+                </button>
+              </form>
+              <div id="kf-hero-success" style="display:none;text-align:center;padding:32px 0">
+                <div style="font-size:36px;margin-bottom:12px">🎉</div>
+                <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:white;margin-bottom:8px">You're on the list!</h3>
+                <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6">We'll send your document checklist and notify you when KartaFlow opens.</p>
+              </div>
+            </div>
+            <script>
+            async function kfSubmitHero(e) {
+              e.preventDefault();
+              const email = document.getElementById('kf-hero-email').value.trim();
+              const btn = document.getElementById('kf-hero-btn');
+              if (!email) return;
+              btn.textContent = 'Joining...';
+              btn.disabled = true;
+              try {
+                const fd = new FormData();
+                fd.append('email', email);
+                await fetch('https://tally.so/r/A7lR9z', { method:'POST', body:fd, mode:'no-cors' });
+                document.getElementById('kf-hero-form').style.display = 'none';
+                document.getElementById('kf-hero-success').style.display = 'block';
+              } catch(ex) {
+                window.open('https://tally.so/r/A7lR9z','_blank');
+                btn.textContent = 'Join early access →';
+                btn.disabled = false;
+              }
+            }
+            </script>
           </div>
         </div>
 
@@ -4398,7 +4440,57 @@ function sendMartaMsg(text) {
         </div>
       </div>
 
-      <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="560" style="min-height:560px" frameborder="0" marginheight="0" marginwidth="0" allow="fullscreen" title="Join the KartaFlow Early Access"></iframe>
+      <!-- Native form: renders reliably on all mobile browsers, no iframe issues -->
+      <div id="kf-form-wrap">
+        <form id="kf-waitlist-form" onsubmit="kfSubmitForm(event)">
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px">What is your email address? <span style="color:var(--red)">*</span></label>
+            <input type="email" id="kf-email" required placeholder="you@email.com"
+              style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:var(--font-body);outline:none;transition:border-color 0.2s;box-sizing:border-box;background:var(--white);color:var(--dark)"
+              onfocus="this.style.borderColor='var(--red)'" onblur="this.style.borderColor='var(--border)'">
+          </div>
+          <button type="submit" id="kf-submit-btn"
+            style="width:100%;padding:15px;background:var(--red);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;font-family:var(--font-body);cursor:pointer;transition:background 0.2s;letter-spacing:-0.01em">
+            Join the early access list →
+          </button>
+          <p id="kf-form-error" style="display:none;color:var(--red);font-size:12px;margin-top:8px;text-align:center"></p>
+        </form>
+        <div id="kf-form-success" style="display:none;text-align:center;padding:32px 0">
+          <div style="font-size:36px;margin-bottom:12px">🎉</div>
+          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--dark);margin-bottom:8px">You're on the list!</h3>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.6">Check your inbox — we'll send your personal document checklist and notify you the moment KartaFlow opens.</p>
+        </div>
+      </div>
+      <script>
+      async function kfSubmitForm(e) {
+        e.preventDefault();
+        const email = document.getElementById('kf-email').value.trim();
+        const btn = document.getElementById('kf-submit-btn');
+        const err = document.getElementById('kf-form-error');
+        if (!email) return;
+        btn.textContent = 'Joining...';
+        btn.disabled = true;
+        err.style.display = 'none';
+        try {
+          // Submit to Tally via their hidden form endpoint
+          const fd = new FormData();
+          fd.append('email', email);
+          const r = await fetch('https://tally.so/r/A7lR9z', {
+            method: 'POST',
+            body: fd,
+            mode: 'no-cors'
+          });
+          // no-cors means we can't read the response, but submission goes through
+          document.getElementById('kf-waitlist-form').style.display = 'none';
+          document.getElementById('kf-form-success').style.display = 'block';
+        } catch(ex) {
+          // Fallback: open Tally in new tab
+          window.open('https://tally.so/r/A7lR9z', '_blank');
+          btn.textContent = 'Join the early access list →';
+          btn.disabled = false;
+        }
+      }
+      </script>
       <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:5px">
         <i data-lucide="lock" style="width:11px;height:11px"></i>
         Your data stays private. Never shared. Stored securely in the EU.
