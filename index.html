@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>KartaFlow — Your Polish Residency. Finally Under Control.</title>
+<title>KartaFlow · Your Polish TRC Application, Done Right</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -293,7 +293,7 @@ em { font-style: italic; color: var(--red); }
     animation: sheet-up 0.35s var(--ease-out) !important;
   }
 
-  /* Sticky close bar — always visible at top of sheet */
+  /* Sticky close bar, always visible at top of sheet */
   #waitlist-modal-close-bar {
     display: flex !important;
   }
@@ -312,7 +312,7 @@ em { font-style: italic; color: var(--red); }
     padding: 20px 20px 40px;
   }
 
-  /* Hide description text + bullets on mobile — form first */
+  /* Hide description text + bullets on mobile, form first */
   #waitlist-modal-desc {
     display: none !important;
   }
@@ -360,7 +360,7 @@ em { font-style: italic; color: var(--red); }
 .announcement-bar .btn-bar:hover { background: var(--red-deep); }
 @media (max-width: 768px) {
   .announcement-bar .bar-text span { display: none; }
-  .announcement-bar .bar-text::after { content: "Early access now open"; }
+  .announcement-bar .bar-text::after { content: "Early access open · Lifetime discount"; }
 }
 
 /* ═══ HERO WAITLIST FORM ═══ */
@@ -1249,10 +1249,10 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════════
-   MOBILE UX OVERHAUL — consolidated fixes
+   MOBILE UX OVERHAUL, consolidated fixes
    ═══════════════════════════════════════════════════ */
 
-/* FIX 1 — Body/HTML horizontal scroll lock */
+/* FIX 1, Body/HTML horizontal scroll lock */
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw !important;
@@ -1262,7 +1262,7 @@ html, body {
   max-width: 100vw;
 }
 
-/* FIX 2 — Hero viewport height (Safari URL bar fix) */
+/* FIX 2, Hero viewport height (Safari URL bar fix) */
 @media (max-width: 768px) {
   .hero {
     min-height: 100svh !important;
@@ -1271,7 +1271,7 @@ html, body {
   }
 }
 
-/* FIX 3 — Section padding reduction on mobile */
+/* FIX 3, Section padding reduction on mobile */
 @media (max-width: 768px) {
   .section {
     padding: 52px 20px !important;
@@ -1281,16 +1281,16 @@ html, body {
   }
 }
 
-/* FIX 4 — Lawyer/Olena card: full mobile rebuild */
+/* FIX 4, Lawyer/Olena card: full mobile rebuild */
 @media (max-width: 768px) {
 
-  /* A: Section wrapper — reduce side padding so card has more room */
+  /* A: Section wrapper, reduce side padding so card has more room */
   #our-lawyer {
     padding-left: 12px !important;
     padding-right: 12px !important;
   }
 
-  /* B: Dark card — no side padding, let child divs handle it */
+  /* B: Dark card, no side padding, let child divs handle it */
   .lawyer-section {
     padding: 24px 0 !important;
     border-radius: 20px !important;
@@ -1310,7 +1310,7 @@ html, body {
     overflow: hidden !important;
   }
 
-  /* D: Inner "lawyer-right" feature card — reduce padding */
+  /* D: Inner "lawyer-right" feature card, reduce padding */
   .lawyer-right {
     padding: 16px !important;
     border-radius: 14px !important;
@@ -1318,7 +1318,7 @@ html, body {
     width: 100% !important;
   }
 
-  /* E: "Why we built" sub-card — reliable override */
+  /* E: "Why we built" sub-card, reliable override */
   .lawyer-section > div > div[style*="background:rgba"] {
     padding: 14px !important;
     margin-left: 0 !important;
@@ -1367,7 +1367,7 @@ html, body {
     line-height: 1.5 !important;
   }
 
-  /* I: Button row — stack vertically */
+  /* I: Button row, stack vertically */
   .lawyer-section .btn.btn-primary.btn-sm {
     width: 100% !important;
     justify-content: center !important;
@@ -1383,7 +1383,7 @@ html, body {
   }
 }
 
-/* FIX 5 — All primary CTA buttons: full width on mobile */
+/* FIX 5, All primary CTA buttons: full width on mobile */
 @media (max-width: 768px) {
   .btn.btn-primary.btn-lg {
     width: 100% !important;
@@ -1403,7 +1403,7 @@ html, body {
   }
 }
 
-/* FIX 6 — Display heading sizes on small screens */
+/* FIX 6, Display heading sizes on small screens */
 @media (max-width: 480px) {
   .display-lg {
     font-size: clamp(28px, 7.5vw, 44px) !important;
@@ -1416,7 +1416,7 @@ html, body {
   }
 }
 
-/* FIX 7 — Proof bar item sizing */
+/* FIX 7, Proof bar item sizing */
 @media (max-width: 480px) {
   .proof-item {
     font-size: 12px !important;
@@ -1427,7 +1427,7 @@ html, body {
   }
 }
 
-/* FIX 8 — FAB cluster above sticky CTA bar */
+/* FIX 8, FAB cluster above sticky CTA bar */
 @media (max-width: 768px) {
   /* .marta-fab wraps both WhatsApp and Marta buttons */
   .marta-fab {
@@ -1439,7 +1439,7 @@ html, body {
   }
 }
 
-/* FIX 9 — Waitlist card full-width on mobile */
+/* FIX 9, Waitlist card full-width on mobile */
 @media (max-width: 768px) {
   .waitlist-card {
     border-radius: 16px !important;
@@ -1455,7 +1455,7 @@ html, body {
   }
 }
 
-/* FIX 10 — Mid-page CTA eyebrow text wrapping */
+/* FIX 10, Mid-page CTA eyebrow text wrapping */
 @media (max-width: 480px) {
   div[style*="background:var(--dark)"][style*="text-align:center"] p,
   div[style*="background:var(--surface)"][style*="text-align:center"] p {
@@ -1464,9 +1464,9 @@ html, body {
   }
 }
 
-/* FIX 11 — Prevent horizontal overflow from fixed-width children */
+/* FIX 11, Prevent horizontal overflow from fixed-width children */
 @media (max-width: 768px) {
-  /* Only kill container's OWN padding — section already has 20px side padding */
+  /* Only kill container's OWN padding, section already has 20px side padding */
   .section > .container {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -1475,14 +1475,14 @@ html, body {
   }
 }
 
-/* FIX 13 — Waitlist section padding-bottom on mobile (sticky CTA overlap) */
+/* FIX 13, Waitlist section padding-bottom on mobile (sticky CTA overlap) */
 @media (max-width: 768px) {
   #waitlist-section {
     padding-bottom: 100px !important;
   }
 }
 
-/* FIX 14 — Hero: hide founding member info box on mobile, CTA first */
+/* FIX 14, Hero: hide founding member info box on mobile, CTA first */
 @media (max-width: 768px) {
   #hero-founding-box {
     display: none !important;
@@ -1526,7 +1526,7 @@ html, body {
     <button class="btn btn-ghost btn-sm" onclick="showPage('auth');switchAuthTab('login')">Sign in</button>
     <button class="btn btn-primary btn-sm" onclick="joinWaitlist()">
       <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
-      Join free — founding member
+      Get early access + lifetime discount
     </button>
     <button class="nav-menu-btn" id="nav-menu-btn" onclick="openMobileMenu()">
       <i data-lucide="menu"></i>
@@ -1566,7 +1566,7 @@ html, body {
     <div style="display:flex;flex-direction:column;gap:10px">
       <button class="btn btn-outline btn-full" onclick="closeMobileMenuDirect();showPage('auth');switchAuthTab('login')">Sign in</button>
       <button class="btn btn-primary btn-full" onclick="closeMobileMenuDirect();joinWaitlist()">
-        Reserve my free founding spot <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+        Get early access + lifetime discount <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
       </button>
     </div>
   </div>
@@ -1581,9 +1581,9 @@ html, body {
   <div class="announcement-bar" id="announcement-bar">
     <div class="bar-text">
       <div class="pulse-dot"></div>
-      <span><strong style="color:white">Early Access is open.</strong> Reserve your founding member spot free — lock in the lowest price we'll ever offer, permanently. Only 20 spots this month.</span>
+      <span><strong style="color:white">Early Access is open.</strong> Sign up free and lock in a lifetime discounted price before we launch. First 50 spots only.</span>
     </div>
-    <button class="btn-bar" onclick="joinWaitlist()">Claim my free spot →</button>
+    <button class="btn-bar" onclick="joinWaitlist()">Get early access + lifetime discount →</button>
   </div>
 
   <!-- HERO -->
@@ -1599,36 +1599,36 @@ html, body {
           The only platform that<br>prepares your TRC application<br><em>correctly.</em><br>Entirely <em>online.</em>
         </h1>
         <p class="hero-sub reveal reveal-delay-2">
-          <strong>No lawyer visits.</strong> <strong>No document guesswork.</strong> <strong>No overpaying.</strong> Get your personalised checklist, upload your documents, and have a licensed immigration lawyer verify everything — <em>before you submit to the immigration office.</em>
+          <strong>No lawyer visits.</strong> <strong>No document guesswork.</strong> <strong>No overpaying.</strong> Get your personalised checklist, upload your documents, and have a licensed immigration lawyer verify everything, <em>before you submit to the immigration office.</em>
         </p>
 
         <!-- HERO WAITLIST -->
         <div class="reveal reveal-delay-3" id="waitlist-hero">
           <div class="hero-waitlist-badge">
             <div class="badge-dot"></div>
-            Early Access — 20 founding member spots left this month
+            Early access open · Lifetime discount for the first 50 signups
           </div>
           <div class="hero-tally-wrap">
             <button class="btn btn-primary btn-lg" style="width:100%;font-size:16px;padding:16px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-              Reserve my founding spot — it's free
+              Get early access, lock in lifetime discount
               <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
             </button>
             <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">Takes 30 seconds · Free · No credit card · No payment today</div>
           </div>
           <div class="hero-form-microcopy">
-            <span><i data-lucide="gift" style="width:13px;height:13px;color:var(--red)"></i> <strong style="color:var(--text)">Founding member = lowest price ever, locked in forever</strong></span>
+            <span><i data-lucide="gift" style="width:13px;height:13px;color:var(--red)"></i> <strong style="color:var(--text)">Sign up now to lock in a discounted lifetime price at launch</strong></span>
           </div>
           <div id="hero-founding-box" style="background:var(--surface);border-radius:var(--r);padding:16px 18px;margin-bottom:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Founding member</div>
-            <p style="font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:14px">Sign up today and you're one of the first people to use KartaFlow when it launches. For that, you get the lowest price we'll ever charge — locked in permanently — plus priority access ahead of the public queue and a direct line to our legal team.</p>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Early Access</div>
+            <p style="font-size:13px;color:var(--text-2);line-height:1.6;margin-bottom:14px">Sign up today and be among the first people to use KartaFlow when it launches. You get a lifetime discounted price locked in permanently, priority access ahead of the public queue, and a direct line to our legal team.</p>
             <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px">
-              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Lowest price ever — locked in forever</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Lifetime discounted price, locked in forever</div>
               <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> First in line when KartaFlow opens publicly</div>
-              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Personal document checklist (after sign up + questionnaire)</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Personal document checklist for your exact case type</div>
               <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text)"><i data-lucide="check-circle" style="width:14px;height:14px;color:var(--success);flex-shrink:0"></i> Direct WhatsApp to Olena's legal team</div>
             </div>
             <button class="btn btn-primary btn-full" onclick="joinWaitlist()" style="border-radius:var(--r);font-size:14px">
-              Claim one of 20 founding spots <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
+              Get early access + lifetime discount <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
             </button>
             <div style="font-size:11px;color:var(--text-4);text-align:center;margin-top:8px">Free to join · No card · No payment today</div>
           </div>
@@ -1650,19 +1650,19 @@ html, body {
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            Reviewed by a real licensed lawyer — not AI, not a template
+            Reviewed by a real licensed lawyer, not AI, not a template
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            From 249 PLN — up to 10× less than a private law firm
+            From 249 PLN, up to 10× less than a private law firm
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            100% online — no office visits, no appointments
+            100% online, no office visits, no appointments
           </div>
           <div class="trust-item">
             <i data-lucide="check-circle"></i>
-            English · Russian · Ukrainian — fully supported
+            English · Russian · Ukrainian, fully supported
           </div>
         </div>
       </div>
@@ -1745,22 +1745,22 @@ html, body {
   <!-- PROOF BAR -->
   <div class="proof-bar">
     <div class="proof-track">
-      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong> — if your documents are right</div>
+      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong>, if your documents are right</div>
       <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> cases approved by Olena's team</div>
       <div class="proof-item"><i data-lucide="star"></i><strong>98%</strong> success rate</div>
       <div class="proof-item"><i data-lucide="shield-check"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
       <div class="proof-item"><i data-lucide="clock"></i>Lawyer feedback within <strong>24 hours</strong></div>
       <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
-      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
-      <div class="proof-item"><i data-lucide="gift"></i><strong>Founding member</strong> = lowest price ever, locked in forever · free to join today</div>
-      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong> — if your documents are right</div>
+      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong>, vs 3,000–8,000 PLN at a law firm</div>
+      <div class="proof-item"><i data-lucide="gift"></i><strong>Early Access</strong> = lowest price ever, locked in forever · free to join today</div>
+      <div class="proof-item"><i data-lucide="alert-triangle"></i>TRC rejections are <strong>avoidable</strong>, if your documents are right</div>
       <div class="proof-item"><i data-lucide="users"></i><strong>2,400+</strong> cases approved by Olena's team</div>
       <div class="proof-item"><i data-lucide="star"></i><strong>98%</strong> success rate</div>
       <div class="proof-item"><i data-lucide="shield-check"></i>Poland's <strong>only</strong> dedicated TRC platform</div>
       <div class="proof-item"><i data-lucide="clock"></i>Lawyer feedback within <strong>24 hours</strong></div>
       <div class="proof-item"><i data-lucide="globe"></i>English · Russian · Ukrainian</div>
-      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong> — vs 3,000–8,000 PLN at a law firm</div>
-      <div class="proof-item"><i data-lucide="gift"></i><strong>Founding member</strong> = lowest price ever, locked in forever · free to join today</div>
+      <div class="proof-item"><i data-lucide="piggy-bank"></i>From <strong>249 PLN</strong>, vs 3,000–8,000 PLN at a law firm</div>
+      <div class="proof-item"><i data-lucide="gift"></i><strong>Early Access</strong> = lowest price ever, locked in forever · free to join today</div>
     </div>
   </div>
 
@@ -1779,7 +1779,7 @@ html, body {
             <i data-lucide="user-plus"></i>
           </div>
           <div class="step-title">Create your free account</div>
-          <div class="step-desc">Answer a short intake about your situation — takes 60 seconds. Your personalised checklist is generated instantly, showing exactly which documents apply to your case. Nothing generic.</div>
+          <div class="step-desc">Answer a short intake about your situation, takes 60 seconds. Your personalised checklist is generated instantly, showing exactly which documents apply to your case. Nothing generic.</div>
         </div>
         <div class="step-card">
           <div class="step-num">02</div>
@@ -1787,7 +1787,7 @@ html, body {
             <i data-lucide="upload-cloud"></i>
           </div>
           <div class="step-title">Upload your documents</div>
-          <div class="step-desc">Your checklist tells you precisely what to upload and why. Our AI pre-checks every file before your lawyer sees it — catching bad scans, wrong formats, or missing items before they become a rejection reason.</div>
+          <div class="step-desc">Your checklist tells you precisely what to upload and why. Our AI pre-checks every file before your lawyer sees it, catching bad scans, wrong formats, or missing items before they become a rejection reason.</div>
         </div>
         <div class="step-card">
           <div class="step-num">03</div>
@@ -1795,7 +1795,7 @@ html, body {
             <i data-lucide="scale"></i>
           </div>
           <div class="step-title">Licensed lawyer reviews your documents</div>
-          <div class="step-desc">Your assigned licensed lawyer personally reads every document you upload. You receive specific, written feedback — not a template, not a junior associate. A real licensed lawyer who has approved 2,400+ cases.</div>
+          <div class="step-desc">Your assigned licensed lawyer personally reads every document you upload. You receive specific, written feedback, not a template, not a junior associate. A real licensed lawyer who has approved 2,400+ cases.</div>
         </div>
         <div class="step-card">
           <div class="step-num">04</div>
@@ -1811,11 +1811,11 @@ html, body {
   <!-- MID-PAGE CTA -->
   <div style="background:var(--dark);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
     <div class="container" style="max-width:640px">
-      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px">Early Access · 20 founding member spots this month</p>
-      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px;line-height:1.6">Reserve your spot free. Lock in the lowest price we'll ever charge — <strong style="color:rgba(255,255,255,0.8)">permanently.</strong></p>
+      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px">Early Access · Lifetime discount for the first 50 signups</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px;line-height:1.6">Reserve your spot free. Lock in the lowest price we'll ever charge, <strong style="color:rgba(255,255,255,0.8)">permanently.</strong></p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
-        Reserve my founding member spot — it's free
+        Get early access + lifetime discount
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
       <div style="font-size:12px;color:rgba(255,255,255,0.35)">Takes 30 seconds · No credit card · Free to join</div>
@@ -1830,7 +1830,7 @@ html, body {
           <span class="label-xs" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:20px;letter-spacing:0.12em;text-transform:uppercase;font-size:11px">The team behind every review</span>
           <div style="position:relative;width:96px;height:96px;margin-bottom:20px;flex-shrink:0">
             <img src="data:image/png;base64,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"
-              alt="Olena Harkusha — Licensed Immigration Lawyer"
+              alt="Olena Harkusha, Licensed Immigration Lawyer"
               style="width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--red);display:block"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="lawyer-badge" style="display:none">OH</div>
@@ -1838,13 +1838,13 @@ html, body {
           <div class="lawyer-name">Olena Harkusha</div>
           <div class="lawyer-title">Licensed Immigration Lawyer (Radca Prawny) · 2,400+ cases · 98% success rate</div>
           <p class="lawyer-desc">
-            Olena Harkusha has been one of Poland's most trusted immigration lawyers long before KartaFlow existed — helping foreigners navigate TRC applications through her practice at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">legalnopl.com</a> and educating the community through <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">@legal_trc_poland</a>. When we came together, we found we were solving the same problem from different angles — she was limited by how many cases one lawyer can personally handle each month, and we were building the structure to change that. KartaFlow is what happens when you combine her legal expertise with a purpose-built platform. Same lawyer. Same standard. Now accessible to far more people.
+            Olena Harkusha has been one of Poland's most trusted immigration lawyers long before KartaFlow existed, helping foreigners navigate TRC applications through her practice at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">legalnopl.com</a> and educating the community through <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">@legal_trc_poland</a>. When we came together, we found we were solving the same problem from different angles, she was limited by how many cases one lawyer can personally handle each month, and we were building the structure to change that. KartaFlow is what happens when you combine her legal expertise with a purpose-built platform. Same lawyer. Same standard. Now accessible to far more people.
           </p>
 
           <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px 20px;margin-bottom:24px">
             <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px">Why we built KartaFlow together</div>
             <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin:0">
-              Olena could only take on a limited number of cases each month — and every case she couldn't reach meant another foreigner navigating the process alone, often getting it wrong. Together we built KartaFlow to change that. By structuring the document collection, AI pre-checking, and review workflow, we made it possible for Olena's team to help more people at a significantly lower price — without cutting corners on the legal standard. Same expertise. More people reached. Better organised for everyone.
+              Olena could only take on a limited number of cases each month, and every case she couldn't reach meant another foreigner navigating the process alone, often getting it wrong. Together we built KartaFlow to change that. By structuring the document collection, AI pre-checking, and review workflow, we made it possible for Olena's team to help more people at a significantly lower price, without cutting corners on the legal standard. Same expertise. More people reached. Better organised for everyone.
             </p>
           </div>
 
@@ -1878,7 +1878,7 @@ html, body {
             <div class="lawyer-feature-icon"><i data-lucide="star"></i></div>
             <div>
               <div class="lawyer-feature-title">2,400+ successful applications</div>
-              <div class="lawyer-feature-desc">Her team's track record is public — documented across hundreds of cases and a community of followers who share their results openly.</div>
+              <div class="lawyer-feature-desc">Her team's track record is public, documented across hundreds of cases and a community of followers who share their results openly.</div>
             </div>
           </div>
           <div class="lawyer-feature">
@@ -1892,15 +1892,15 @@ html, body {
             <div class="lawyer-feature-icon"><i data-lucide="trending-up"></i></div>
             <div>
               <div class="lawyer-feature-title">Same excellence, now more accessible</div>
-              <div class="lawyer-feature-desc">KartaFlow doesn't change how Olena works — it gives her team the structure to help more people, faster, without the overhead of traditional legal consultations.</div>
+              <div class="lawyer-feature-desc">KartaFlow doesn't change how Olena works, it gives her team the structure to help more people, faster, without the overhead of traditional legal consultations.</div>
             </div>
           </div>
           <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;gap:10px">
             <a href="https://wa.me/48452069627" target="_blank" class="btn btn-full" style="background:rgba(37,211,102,0.12);color:#4ADE80;border:1px solid rgba(37,211,102,0.25)">
-              <i data-lucide="message-circle" style="width:16px;height:16px"></i> WhatsApp — speak to us directly
+              <i data-lucide="message-circle" style="width:16px;height:16px"></i> WhatsApp, speak to us directly
             </a>
             <button class="btn btn-full" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.12)" onclick="openMartaChat()">
-              <i data-lucide="bot" style="width:16px;height:16px"></i> Ask Marta — AI assistant
+              <i data-lucide="bot" style="width:16px;height:16px"></i> Ask Marta, AI assistant
             </button>
           </div>
         </div>
@@ -1908,7 +1908,7 @@ html, body {
     </div>
   </section>
 
-  <!-- SOCIAL PROOF STRIP — Olena's public content -->
+  <!-- SOCIAL PROOF STRIP, Olena's public content -->
   <div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0">
     <div class="container">
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center">
@@ -1952,11 +1952,11 @@ html, body {
         <span class="label-red"><i data-lucide="star" style="width:13px;height:13px"></i> Real clients · Real results</span>
       </div>
       <h2 class="display-lg section-title reveal">People who got their<br>TRC <em>approved.</em></h2>
-      <p class="section-sub reveal">From Olena's clients — foreigners across Poland who went through the process and came out the other side with their residence card.</p>
+      <p class="section-sub reveal">From Olena's clients, foreigners across Poland who went through the process and came out the other side with their residence card.</p>
 
       <div class="testimonials-grid reveal">
 
-        <!-- TESTIMONIAL 1 — African client, Work TRC -->
+        <!-- TESTIMONIAL 1, African client, Work TRC -->
         <div class="testimonial-card">
           <div class="stars">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1965,7 +1965,7 @@ html, body {
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="testimonial-text">"I spent four months trying to figure this out on my own — different Facebook groups, contradictory advice, two trips to the Voivodeship office for nothing. Olena looked at my documents and within 24 hours told me exactly what was wrong and what I needed. Third attempt, first time with her — approved. I wish I had found her at the start."</p>
+          <p class="testimonial-text">"I spent four months trying to figure this out on my own, different Facebook groups, contradictory advice, two trips to the Voivodeship office for nothing. Olena looked at my documents and within 24 hours told me exactly what was wrong and what I needed. Third attempt, first time with her, approved. I wish I had found her at the start."</p>
           <div class="testimonial-author">
             <div class="avatar" style="background:var(--red-soft);color:var(--red)">TM</div>
             <div>
@@ -1978,7 +1978,7 @@ html, body {
           </div>
         </div>
 
-        <!-- TESTIMONIAL 2 — Ukrainian client, Family TRC -->
+        <!-- TESTIMONIAL 2, Ukrainian client, Family TRC -->
         <div class="testimonial-card">
           <div class="stars">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -1987,7 +1987,7 @@ html, body {
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="testimonial-text">"Подавала документи на карту побиту вперше і дуже боялась помилитись. Олена перевірила кожен документ, написала чіткий фідбек що виправити, і пояснила чому. Жодного розмитого "можливо треба" — конкретно і по ділу. Карту отримала з першого разу. Рекомендую всім, хто втомився від здогадок."</p>
+          <p class="testimonial-text">"Подавала документи на карту побиту вперше і дуже боялась помилитись. Олена перевірила кожен документ, написала чіткий фідбек що виправити, і пояснила чому. Жодного розмитого "можливо треба", конкретно і по ділу. Карту отримала з першого разу. Рекомендую всім, хто втомився від здогадок."</p>
           <div class="testimonial-author">
             <div class="avatar" style="background:rgba(59,130,246,0.1);color:#3B82F6">OB</div>
             <div>
@@ -2000,7 +2000,7 @@ html, body {
           </div>
         </div>
 
-        <!-- TESTIMONIAL 3 — Russian client, Work TRC Business -->
+        <!-- TESTIMONIAL 3, Russian client, Work TRC Business -->
         <div class="testimonial-card">
           <div class="stars">
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2009,7 +2009,7 @@ html, body {
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="testimonial-text">"До этого платил юристу 4500 злотых — он просто взял документы и пропал на три недели. С Оленой всё иначе: прислал документы, на следующий день получил подробный письменный разбор. Два замечания, исправил, подал. Карту получил. Вся работа заняла меньше двух недель. Разница огромная."</p>
+          <p class="testimonial-text">"До этого платил юристу 4500 злотых, он просто взял документы и пропал на три недели. С Оленой всё иначе: прислал документы, на следующий день получил подробный письменный разбор. Два замечания, исправил, подал. Карту получил. Вся работа заняла меньше двух недель. Разница огромная."</p>
           <div class="testimonial-author">
             <div class="avatar" style="background:rgba(168,85,247,0.1);color:#A855F7">DK</div>
             <div>
@@ -2027,8 +2027,8 @@ html, body {
       <!-- INSTAGRAM POST PREVIEWS -->
       <div class="reveal" style="margin-top:48px">
         <div style="text-align:center;margin-bottom:24px">
-          <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px">See Olena's client results — live from Instagram</div>
-          <div style="font-size:13px;color:var(--text-3)">Real posts from <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:var(--red);font-weight:600;text-decoration:none">@legal_trc_poland</a> — click any post to view on Instagram</div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px">See Olena's client results, live from Instagram</div>
+          <div style="font-size:13px;color:var(--text-3)">Real posts from <a href="https://www.instagram.com/legal_trc_poland" target="_blank" style="color:var(--red);font-weight:600;text-decoration:none">@legal_trc_poland</a>, click any post to view on Instagram</div>
         </div>
         <div class="instagram-posts-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto">
 
@@ -2117,18 +2117,18 @@ html, body {
   <!-- MID-PAGE CTA -->
   <div style="background:var(--dark);padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
     <div class="container" style="max-width:600px">
-      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Founding members · 20 spots this month</p>
+      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px">Early Access · Lifetime discount for the first 50 signups</p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
-        Reserve my spot — free, 30 seconds
+        Get early access + lifetime discount, 30 seconds
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
-      <div style="font-size:12px;color:rgba(255,255,255,0.35)">Founding price locked forever · 20 spots this month</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.35)">Lifetime discount locked in permanently</div>
     </div>
   </div>
 
   <!-- ══════════════════════════════
-       WAITLIST SECTION — PRIMARY
+       WAITLIST SECTION, PRIMARY
   ══════════════════════════════ -->
   <section class="section" id="waitlist-section" style="padding-top:80px;padding-bottom:80px">
     <div class="container">
@@ -2136,20 +2136,20 @@ html, body {
         <div style="text-align:center;margin-bottom:20px">
           <span class="label-red reveal" style="margin-bottom:16px;display:inline-flex">
             <i data-lucide="users" style="width:13px;height:13px"></i>
-            Only 20 spots available this month
+            Early access is open · First 50 spots
           </span>
           <h2 class="display-lg reveal reveal-delay-1" style="color:white;margin-bottom:14px">
-            Fill in the form below.<br><em>Secure your founding spot.</em>
+            Sign up below.<br><em>Lock in your lifetime discount.</em>
           </h2>
           <p class="reveal reveal-delay-2" style="font-size:16px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto 0;line-height:1.65">
-            Sign up today and you're among the first to use KartaFlow when it launches. For that, you get the lowest price we'll ever charge — locked in permanently — plus priority access and a direct line to our legal team.
+            Sign up today and be among the first to use KartaFlow when it launches. You get a lifetime discounted price locked in permanently, priority access ahead of the public launch, and a direct line to our legal team.
           </p>
         </div>
 
         <div class="waitlist-card reveal reveal-delay-2">
           <div class="waitlist-card-header">
-            <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Secure your founding spot — 20 available this month</div>
-            <p style="font-size:15px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0">Free to join. 30 seconds. Your founding price is locked in the moment you submit.</p>
+            <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Lifetime discount locked in at signup, first 50 spots only</div>
+            <p style="font-size:15px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:0">Free to sign up. 30 seconds. Your lifetime discount is locked in the moment you submit.</p>
           </div>
           <div class="waitlist-card-body" style="padding-top:8px">
             <iframe src="https://tally.so/embed/A7lR9z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="600" style="min-height:600px" frameborder="0" marginheight="0" marginwidth="0" title="Join the KartaFlow Early Access"></iframe>
@@ -2164,7 +2164,7 @@ html, body {
           Built by <strong style="color:rgba(255,255,255,0.55)">Makomborero Pashapa</strong>, in partnership with <strong style="color:rgba(255,255,255,0.55)">Olena Harkusha</strong> (Radca Prawny).
         </p>
         <p class="waitlist-microcopy reveal" style="color:rgba(255,255,255,0.35);margin-top:20px">
-          No payment today. No spam. No commitment. Just your founding member spot and the lowest price we'll ever offer — locked in permanently.
+          No payment today. No spam. No commitment. Just early access and a lifetime discount locked in permanently.
         </p>
       </div>
     </div>
@@ -2175,30 +2175,30 @@ html, body {
         <div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:12px">What happens without KartaFlow</div>
           <h3 style="font-family:var(--font-display);font-size:clamp(20px,2.5vw,26px);font-weight:700;letter-spacing:-0.02em;line-height:1.25;margin-bottom:16px">The average TRC rejection adds <em>3–6 months</em> to your wait.</h3>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0">A rejection means reapplying from scratch, paying office fees again, and staying in legal limbo — sometimes losing your right to work while you wait. Most rejections are caused by document errors that a lawyer review would have caught in 24 hours.</p>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.7;margin:0">A rejection means reapplying from scratch, paying office fees again, and staying in legal limbo, sometimes losing your right to work while you wait. Most rejections are caused by document errors that a lawyer review would have caught in 24 hours.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px">
           <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
             <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
-            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Wrong document version</strong> — the most common rejection reason. The Voivodeship won't tell you which one until after.</div>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Wrong document version</strong>, the most common rejection reason. The Voivodeship won't tell you which one until after.</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
             <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
-            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Missing employer stamp</strong> — technically optional in some cases, required in others. Unless you know which, assume required.</div>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Missing employer stamp</strong>, technically optional in some cases, required in others. Unless you know which, assume required.</div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border)">
             <i data-lucide="x-circle" style="width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px"></i>
-            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Expired or soon-expiring documents</strong> — accepted at intake, flagged at review. Application void.</div>
+            <div style="font-size:13px;color:var(--text-2);line-height:1.5"><strong style="color:var(--text)">Expired or soon-expiring documents</strong>, accepted at intake, flagged at review. Application void.</div>
           </div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
         <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-          Reserve my free founding member spot <i data-lucide="arrow-right"></i>
+          Get early access + lifetime discount <i data-lucide="arrow-right"></i>
         </button>
         <button class="btn btn-outline btn-lg" onclick="openMartaChat()">
-          <i data-lucide="bot"></i> Ask Marta — AI assistant
+          <i data-lucide="bot"></i> Ask Marta, AI assistant
         </button>
         <a href="https://wa.me/48452069627" target="_blank" class="btn btn-lg" style="background:#25D366;color:white">
           <i data-lucide="message-circle"></i> WhatsApp us
@@ -2207,14 +2207,14 @@ html, body {
     </div>
   </section>
 
-  <!-- PRICING — right after how it works -->
+  <!-- PRICING, right after how it works -->
   <section class="section" id="pricing" style="background:var(--off-white)">
     <div class="container">
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="tag" style="width:13px;height:13px"></i> Pricing</span>
       </div>
       <h2 class="display-lg section-title reveal">Expert legal review.<br><em>At a fraction of the cost.</em></h2>
-      <p class="section-sub reveal">Every tier includes Olena's personal legal review — the same standard her private clients pay 3,000–8,000 PLN for. Flat fee, one-time, no surprises. Choose how much support you need.</p>
+      <p class="section-sub reveal">Every tier includes Olena's personal legal review, the same standard her private clients pay 3,000–8,000 PLN for. Flat fee, one-time, no surprises. Choose how much support you need.</p>
 
       <div class="pricing-grid reveal" style="margin:0 auto">
         <!-- TIER 1 -->
@@ -2262,12 +2262,12 @@ html, body {
           </button>
         </div>
 
-        <!-- TIER 2 — FEATURED -->
+        <!-- TIER 2, FEATURED -->
         <div class="pricing-card featured">
           <div class="popular-tag">Most popular</div>
           <div class="tier-label light">Tier 2 · Complete</div>
-          <div class="tier-name light">Guided</div>
-          <div class="tier-tagline light">Full support with direct lawyer access — no call needed</div>
+          <div class="tier-name light">Handled</div>
+          <div class="tier-tagline light">Documents reviewed and verified. We handle the submission for you.</div>
           <div style="display:flex;align-items:flex-end;gap:4px;margin-bottom:4px">
             <div class="tier-price light"><span class="tier-currency">PLN</span>599</div>
           </div>
@@ -2288,31 +2288,39 @@ html, body {
             </li>
             <li class="tier-feature light">
               <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
-              <span>Priority review — <strong style="color:white">24h SLA</strong></span>
+              <span>Priority review, <strong style="color:white">24h SLA</strong></span>
             </li>
             <li class="tier-feature light">
               <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
-              <span>Push notifications — phone &amp; desktop</span>
+              <span>Push notifications, phone &amp; desktop</span>
+            </li>
+            <li class="tier-feature light">
+              <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
+              <span><strong style="color:white">We handle your submission.</strong> Once documents are reviewed and all clear, KartaFlow submits on your behalf</span>
             </li>
             <li class="tier-feature light">
               <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
               <span>Family member add-on (+300 PLN)</span>
             </li>
             <li class="tier-feature light">
-              <i data-lucide="minus-circle" style="width:18px;height:18px;color:rgba(255,255,255,0.2);flex-shrink:0;margin-top:1px"></i>
-              <span style="color:rgba(255,255,255,0.35)">No video strategy call</span>
+              <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
+              <span><strong style="color:white">Video strategy call</strong> with your lawyer</span>
+            </li>
+            <li class="tier-feature light">
+              <i data-lucide="check-circle" style="width:18px;height:18px;color:#4ADE80;flex-shrink:0;margin-top:1px"></i>
+              <span><strong style="color:white">Lawyer consultation</strong> included before submission</span>
             </li>
           </ul>
           <button class="btn btn-primary btn-full btn-lg" onclick="selectTier('tier2')" style="background:white;color:var(--dark)">
-            Choose Guided <i data-lucide="arrow-right"></i>
+            Choose Handled <i data-lucide="arrow-right"></i>
           </button>
         </div>
 
         <!-- TIER 3 -->
         <div class="pricing-card">
           <div class="tier-label dark">Tier 3 · Premium</div>
-          <div class="tier-name">Fully Handled</div>
-          <div class="tier-tagline dark">Every detail managed for you — zero stress, maximum confidence</div>
+          <div class="tier-name">Lawyer-Assisted</div>
+          <div class="tier-tagline dark">Personal lawyer guidance &amp; hands-on assistance through every step of submission</div>
           <div style="display:flex;align-items:flex-end;gap:4px;margin-bottom:4px">
             <div class="tier-price"><span class="tier-currency">PLN</span>999</div>
           </div>
@@ -2321,7 +2329,7 @@ html, body {
           <ul class="tier-features">
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
-              <span>Everything in Guided</span>
+              <span>Everything in Handled</span>
             </li>
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
@@ -2329,11 +2337,11 @@ html, body {
             </li>
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
-              <span><strong>1:1 video call</strong> with Olena Harkusha</span>
+              <span><strong>Extended 1:1 video call</strong> with Olena Harkusha</span>
             </li>
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
-              <span>Express priority — <strong>12h SLA</strong></span>
+              <span>Express priority, <strong>12h SLA</strong></span>
             </li>
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
@@ -2345,11 +2353,19 @@ html, body {
             </li>
             <li class="tier-feature">
               <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
+              <span><strong>Lawyer-guided submission.</strong> Your lawyer is actively present and assisting you through every step of the final submission</span>
+            </li>
+            <li class="tier-feature">
+              <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
+              <span><strong>Dedicated immigration specialist</strong> providing hands-on guidance during submission</span>
+            </li>
+            <li class="tier-feature">
+              <i data-lucide="check-circle" class="tier-check red" style="width:18px;height:18px"></i>
               <span>Formal engagement letter included</span>
             </li>
           </ul>
           <button class="btn btn-dark btn-full btn-lg" onclick="selectTier('tier3')">
-            Choose Fully Handled <i data-lucide="arrow-right"></i>
+            Choose Lawyer-Assisted <i data-lucide="arrow-right"></i>
           </button>
         </div>
       </div>
@@ -2360,32 +2376,33 @@ html, body {
         </p>
         <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap">
           <div class="trust-item"><i data-lucide="check-circle"></i>24h refund policy</div>
-          <div class="trust-item"><i data-lucide="check-circle"></i>No subscription — one-time payment</div>
+          <div class="trust-item"><i data-lucide="check-circle"></i>No subscription, one-time payment</div>
           <div class="trust-item"><i data-lucide="check-circle"></i>Upgrade anytime</div>
         </div>
 
         <!-- PRICING WAITLIST STRIP -->
         <div class="pricing-waitlist-strip reveal">
           <div>
-            <div class="label-red" style="margin-bottom:12px"><i data-lucide="clock" style="width:13px;height:13px"></i> Only 20 spots available this month</div>
+            <div class="label-red" style="margin-bottom:12px"><i data-lucide="clock" style="width:13px;height:13px"></i> Early access is open · First 50 spots</div>
             <h3 style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,28px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:10px">
-              Not ready to start yet?<br><em>Join free. Your price is saved forever.</em>
+              Not ready to start your application yet?<br><em>Sign up free. Your lifetime discount is saved.</em>
             </h3>
             <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:20px">
-              Signing up today is completely free — no payment, no credit card. You're simply reserving your <strong>founding member spot</strong>, which locks in the lowest price we'll ever charge. Start your application whenever you're ready — your price never changes.
+              Signing up today is completely free, no payment, no credit card. You're simply signing up for early access, which locks in a discounted lifetime price at launch. Start your application whenever you're ready and your price never changes.
             </p>
             <button class="btn btn-primary btn-lg" style="width:100%;font-size:15px;padding:14px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-              Reserve my free spot now
+              Get early access, lock in lifetime discount
               <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
             </button>
-            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">20 spots · Free to join · No credit card · No payment today</div>
+            <div style="font-size:12px;color:var(--text-3);margin-top:8px;text-align:center">Free to join · No credit card · No payment today</div>
           </div>
           <div>
-            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px">What "founding member" means for you</div>
+            <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px">What early access means for you</div>
             <ul class="pricing-waitlist-benefits">
-              <li><strong>Your personal document checklist</strong> — know exactly what to prepare</li>
-              <li><strong>Lowest price locked in forever</strong> — even if you start in 3 months</li>
+              <li><strong>Your personal document checklist</strong>, know exactly what to prepare</li>
+              <li><strong>Lifetime discounted price locked in forever</strong>, even if you start in 3 months</li>
               <li><strong>First in line</strong> when we fully launch to the public</li>
+              <li><strong>Video strategy call</strong> and lawyer consultation included (Tier 2+)</li>
               <li><strong>Priority support</strong> from our legal team</li>
               <li><strong>Direct WhatsApp</strong> line to our lawyer</li>
               <li>Zero spam · Unsubscribe anytime</li>
@@ -2400,11 +2417,11 @@ html, body {
   <!-- MID-PAGE CTA -->
   <div style="background:var(--surface);padding:40px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="container" style="max-width:640px">
-      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Early Access · 20 founding member spots this month</p>
-      <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.6">As a <strong>founding member</strong>, your price is locked in permanently — it's the best price we'll ever offer. You pay nothing today.</p>
+      <p style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px">Early Access · Lifetime discount for the first 50 signups</p>
+      <p style="font-size:14px;color:var(--text-2);margin-bottom:20px;line-height:1.6">As an early access member, your discounted lifetime price is locked in permanently. You pay nothing today.</p>
       <button class="btn btn-primary btn-lg" onclick="joinWaitlist()"
         style="font-size:16px;padding:16px 36px;border-radius:var(--r);display:inline-flex;align-items:center;gap:10px;margin-bottom:12px">
-        Lock in the founding price — forever
+        Lock in your lifetime discount now
         <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
       </button>
       <div style="font-size:12px;color:var(--text-3)">Free to join · No credit card · No payment today</div>
@@ -2418,27 +2435,27 @@ html, body {
         <span class="label-red"><i data-lucide="gift" style="width:13px;height:13px"></i> What you get</span>
       </div>
       <h2 class="display-lg section-title reveal">One dashboard. One lawyer.<br><em>One correct application.</em></h2>
-      <p class="section-sub reveal">KartaFlow combines licensed legal expertise with a purpose-built platform — AI pre-checks your documents before your lawyer reviews them, so their time goes on real feedback, not fixing basic errors. You get a licensed lawyer's approval at a structured, affordable price.</p>
+      <p class="section-sub reveal">KartaFlow combines licensed legal expertise with a purpose-built platform, AI pre-checks your documents before your lawyer reviews them, so their time goes on real feedback, not fixing basic errors. You get a licensed lawyer's approval at a structured, affordable price.</p>
 
       <div class="feature-grid">
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon"><i data-lucide="layout-dashboard"></i></div>
           <div class="feature-title">Your personal case dashboard</div>
-          <div class="feature-desc">Create your account and manage your entire TRC process from one profile — checklist, documents, lawyer feedback, messages, status. Everything in one place, any time.</div>
+          <div class="feature-desc">Create your account and manage your entire TRC process from one profile, checklist, documents, lawyer feedback, messages, status. Everything in one place, any time.</div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon"><i data-lucide="clipboard-check"></i></div>
           <div class="feature-title">Personalised document checklist</div>
-          <div class="feature-desc">Your checklist is built from your profile. Only the documents that apply to your exact case — no generic lists, no irrelevant requirements.</div>
+          <div class="feature-desc">Your checklist is built from your profile. Only the documents that apply to your exact case, no generic lists, no irrelevant requirements.</div>
         </div>
         <div class="feature-card reveal reveal-delay-3">
           <div class="feature-icon"><i data-lucide="cpu"></i></div>
           <div class="feature-title">AI document pre-validation</div>
-          <div class="feature-desc">Every file is automatically checked before your lawyer sees it — wrong dates, missing stamps, unreadable scans caught instantly. Faster turnaround, fewer surprises.</div>
+          <div class="feature-desc">Every file is automatically checked before your lawyer sees it, wrong dates, missing stamps, unreadable scans caught instantly. Faster turnaround, fewer surprises.</div>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon"><i data-lucide="scale"></i></div>
-          <div class="feature-title">Licensed lawyer review — flat fee</div>
+          <div class="feature-title">Licensed lawyer review, flat fee</div>
           <div class="feature-desc">A qualified Polish immigration lawyer (Radca Prawny) personally reviews your documents. Written feedback, not a template. No hourly billing. From 249 PLN total.</div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
@@ -2455,7 +2472,7 @@ html, body {
 
       <div style="text-align:center;margin-top:48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal">
         <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-          Reserve my free founding member spot <i data-lucide="arrow-right"></i>
+          Get early access + lifetime discount <i data-lucide="arrow-right"></i>
         </button>
         <a href="https://wa.me/48452069627" target="_blank" class="btn btn-lg" style="background:#25D366;color:white">
           <i data-lucide="message-circle"></i> Chat on WhatsApp
@@ -2471,7 +2488,7 @@ html, body {
         <span class="label-red"><i data-lucide="layout-dashboard" style="width:13px;height:13px"></i> Live demo preview</span>
       </div>
       <h2 class="display-lg section-title reveal">See exactly what your<br>dashboard <em>looks like.</em></h2>
-      <p class="section-sub reveal">This is exactly what you'll see when you join. Your documents, your checklist, your lawyer's feedback — all in one place. No email chains, no office visits, no guessing what's missing.</p>
+      <p class="section-sub reveal">This is exactly what you'll see when you join. Your documents, your checklist, your lawyer's feedback, all in one place. No email chains, no office visits, no guessing what's missing.</p>
 
       <div class="demo-browser-chrome reveal">
         <div class="demo-chrome-bar">
@@ -2508,7 +2525,7 @@ html, body {
             <div class="demo-case-header">
               <div>
                 <div style="font-size:17px;font-weight:700;letter-spacing:-0.01em;font-family:var(--font-display)">Work TRC Application</div>
-                <div style="font-size:13px;color:var(--text-3);margin-top:2px">Tier 2 · Guided · Started 3 days ago</div>
+                <div style="font-size:13px;color:var(--text-3);margin-top:2px">Tier 2 · Handled · Started 3 days ago</div>
               </div>
               <span class="badge badge-amber" style="font-size:12px;padding:6px 12px">⚡ In Review</span>
             </div>
@@ -2555,7 +2572,7 @@ html, body {
         <p style="font-size:15px;color:var(--text-2);margin-bottom:20px;line-height:1.55">This is exactly what you'll see when you join. Sign up free today to get your own dashboard, checklist, and lawyer review.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="btn btn-primary btn-lg" onclick="joinWaitlist()">
-            Reserve my free founding member spot → <i data-lucide="arrow-right"></i>
+            Get early access, lock in lifetime discount <i data-lucide="arrow-right"></i>
           </button>
           <button class="btn btn-outline btn-lg" onclick="loginDemo('client')">
             <i data-lucide="layout-dashboard"></i> Open interactive demo
@@ -2565,7 +2582,7 @@ html, body {
     </div>
   </section>
 
-  <!-- FOUNDER REEL — Why KartaFlow exists -->
+  <!-- FOUNDER REEL, Why KartaFlow exists -->
   <section style="background:var(--dark);padding:64px 0 72px">
     <div class="container">
       <div class="reel-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:0 auto">
@@ -2585,15 +2602,15 @@ html, body {
           <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
             <div style="display:flex;align-items:flex-start;gap:12px">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
-              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Olena and her team at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">Legalno.pl</a> were already helping clients one-on-one with a 98% success rate — but their legal team can only handle so many cases a month</p>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Olena and her team at <a href="https://www.legalnopl.com/" target="_blank" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px">Legalno.pl</a> were already helping clients one-on-one with a 98% success rate, but their legal team can only handle so many cases a month</p>
             </div>
             <div style="display:flex;align-items:flex-start;gap:12px">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
-              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Thousands of foreigners were being rejected for avoidable mistakes, stuck with unhelpful lawyers, paying thousands of PLN, and making trip after trip to the office — only to be told something was missing</p>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">Thousands of foreigners were being rejected for avoidable mistakes, stuck with unhelpful lawyers, paying thousands of PLN, and making trip after trip to the office, only to be told something was missing</p>
             </div>
             <div style="display:flex;align-items:flex-start;gap:12px">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:8px"></div>
-              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">So we came together to build KartaFlow — making Olena's expertise accessible to everyone, not just those who can afford a private lawyer, and doing it entirely online</p>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0">So we came together to build KartaFlow, making Olena's expertise accessible to everyone, not just those who can afford a private lawyer, and doing it entirely online</p>
             </div>
           </div>
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
@@ -2605,7 +2622,7 @@ html, body {
               @kartaflow.pl
             </a>
             <button class="btn btn-primary" onclick="joinWaitlist()" style="font-size:13px;padding:10px 20px">
-              Reserve my free founding member spot <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+              Get early access, lock in lifetime discount <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
             </button>
           </div>
         </div>
@@ -2624,7 +2641,7 @@ html, body {
                   <i data-lucide="play" style="width:22px;height:22px;color:white;margin-left:3px"></i>
                 </div>
                 <div style="font-size:13px;font-weight:600;color:white;margin-bottom:6px">@kartaflow.pl</div>
-                <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px">Why KartaFlow was built — watch on Instagram</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:16px">Why KartaFlow was built, watch on Instagram</div>
                 <a href="https://www.instagram.com/reel/DVONSozDJdZ/" target="_blank" rel="noopener"
                    style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;background:linear-gradient(135deg,#f09433,#bc1888);color:white;text-decoration:none;font-size:12px;font-weight:700">
                   <i data-lucide="play-circle" style="width:13px;height:13px"></i> Watch Reel
@@ -2645,14 +2662,14 @@ html, body {
     </div>
   </section>
 
-  <!-- WHY KARTAFLOW — 3 PILLARS -->
+  <!-- WHY KARTAFLOW, 3 PILLARS -->
   <section class="section" style="background:var(--off-white)" id="why-kartaflow">
     <div class="container">
       <div class="section-eyebrow">
         <span class="label-red"><i data-lucide="zap" style="width:13px;height:13px"></i> Why KartaFlow</span>
       </div>
       <h2 class="display-lg section-title reveal">Most TRC rejections are<br><em>completely avoidable.</em></h2>
-      <p class="section-sub reveal">Most foreigners in Poland get rejected not because they're ineligible — but because of missing stamps, wrong document versions, or formatting errors. KartaFlow and Olena's team exist to make that impossible to happen to you.</p>
+      <p class="section-sub reveal">Most foreigners in Poland get rejected not because they're ineligible, but because of missing stamps, wrong document versions, or formatting errors. KartaFlow and Olena's team exist to make that impossible to happen to you.</p>
 
       <div class="diff-grid reveal">
         <!-- PILLAR 1 -->
@@ -2663,7 +2680,7 @@ html, body {
           </div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">More convenient</div>
           <div style="font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:14px">100% online.<br>No lawyer visits.</div>
-          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">You manage your entire TRC preparation from your dashboard — at any hour, from any device, without booking a lawyer's appointment. Upload your documents once. Everything else is handled from there.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">You manage your entire TRC preparation from your dashboard, at any hour, from any device, without booking a lawyer's appointment. Upload your documents once. Everything else is handled from there.</p>
         </div>
 
         <!-- PILLAR 2 -->
@@ -2674,7 +2691,7 @@ html, body {
           </div>
           <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:10px">Better priced</div>
           <div style="font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:14px">Up to 10× cheaper<br>than a private lawyer.</div>
-          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Olena's team was already charging 3,000–8,000 PLN per case working with clients directly. KartaFlow lets her help more people by making the process structured — so you get the same licensed lawyer review, from 249 PLN, one-time. Not hourly. Not a retainer.</p>
+          <p style="font-size:15px;line-height:1.65;color:var(--text-2)">Olena's team was already charging 3,000–8,000 PLN per case working with clients directly. KartaFlow lets her help more people by making the process structured, so you get the same licensed lawyer review, from 249 PLN, one-time. Not hourly. Not a retainer.</p>
         </div>
 
         <!-- PILLAR 3 -->
@@ -2713,15 +2730,15 @@ html, body {
           Poland's first &amp; only TRC platform
         </div>
         <h2 class="cta-title">Your residency.<br>Done right. First time.</h2>
-        <p class="cta-sub">Most TRC rejections happen because of avoidable document errors. Olena's team has a 98% success rate because they catch those errors before you submit. Join as a <strong>founding member</strong> — you get the lowest price we'll ever offer, locked in permanently. You pay nothing today. Only 20 spots this month.</p>
+        <p class="cta-sub">Most TRC rejections happen because of avoidable document errors. Olena's team has a 98% success rate because they catch those errors before you submit. Sign up free today and lock in a lifetime discounted price before we launch. You pay nothing today.</p>
         <div style="max-width:500px;margin:0 auto 16px">
           <button class="btn btn-primary btn-lg" style="width:100%;font-size:15px;padding:14px 24px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;gap:8px" onclick="joinWaitlist()">
-            Reserve my free founding member spot
+            Get early access, lock in lifetime discount
             <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
           </button>
-          <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;text-align:center">20 spots · Free to join · No credit card · No payment today</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;text-align:center">Free to join · No credit card · No payment today</div>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px">20 founding spots this month · Zero spam · Unsubscribe anytime</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px">Zero spam · Unsubscribe anytime</p>
         <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <a href="https://www.instagram.com/kartaflow.pl" target="_blank" rel="noopener"
              style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s"
@@ -2762,7 +2779,7 @@ html, body {
       <div class="footer-grid">
         <div>
           <div class="footer-logo">Karta<span style="color:var(--red)">Flow</span></div>
-          <p class="footer-desc">Poland's first &amp; only dedicated TRC platform. Lawyer-reviewed applications, structured for foreigners — faster, cheaper, and more accurate than going it alone.</p>
+          <p class="footer-desc">Poland's first &amp; only dedicated TRC platform. Lawyer-reviewed applications, structured for foreigners, faster, cheaper, and more accurate than going it alone.</p>
           <p style="font-size:11px;color:var(--text-3);margin-bottom:12px;line-height:1.6">Founded by <strong style="color:var(--text-2)">Makomborero Pashapa</strong> · Legal partnership with <strong style="color:var(--text-2)">Olena Harkusha</strong>, Radca Prawny</p>
           <div class="footer-flag"><div class="footer-flag-white"></div><div class="footer-flag-red"></div></div>
           <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap">
@@ -3259,7 +3276,7 @@ function selectTier(tier) {
   showPage('auth');
   switchAuthTab('register');
   setTimeout(() => { lucide.createIcons(); }, 50);
-  showToast(`${tier.replace('tier','Tier ')} selected — create your account`, 'success');
+  showToast(`${tier.replace('tier','Tier ')} selected, create your account`, 'success');
 }
 
 // ─── CLIENT DASHBOARD ───
@@ -3394,7 +3411,7 @@ function renderClientDocuments() {
             {name:'Passport (all pages)', status:'Verified', date:'Nov 10'},
             {name:'Employment contract', status:'Verified', date:'Nov 10'},
             {name:'Employer letter (Annex)', status:'Verified', date:'Nov 11'},
-            {name:'Salary slip — Sep 2025', status:'Verified', date:'Nov 11'},
+            {name:'Salary slip, Sep 2025', status:'Verified', date:'Nov 11'},
             {name:'Zameldowanie (residence)', status:'Verified', date:'Nov 12'},
             {name:'Application form (filled)', status:'Verified', date:'Nov 12'},
             {name:'Photo (biometric)', status:'Verified', date:'Nov 13'},
@@ -3417,7 +3434,7 @@ function renderClientDocuments() {
         <thead><tr><th>Document</th><th>Status</th><th>Action</th></tr></thead>
         <tbody>
           ${[
-            {name:'Salary slip — Oct 2025', note:'Most recent month required'},
+            {name:'Salary slip, Oct 2025', note:'Most recent month required'},
             {name:'Bank statement (3 months)', note:'Shows financial stability'},
           ].map(d => `
             <tr>
@@ -3453,7 +3470,7 @@ function renderClientMessages() {
       <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;max-height:380px;overflow-y:auto">
         <div style="background:var(--surface);border-radius:12px;padding:14px;max-width:85%">
           <div style="font-size:12px;color:var(--text-3);margin-bottom:6px">Olena · Nov 14, 09:30</div>
-          <div style="font-size:14px;line-height:1.65">Hello John. I have reviewed your passport and employment contract — both look good. I need two more documents to complete the review: your October salary slip and a 3-month bank statement. Please upload these when you can.</div>
+          <div style="font-size:14px;line-height:1.65">Hello John. I have reviewed your passport and employment contract, both look good. I need two more documents to complete the review: your October salary slip and a 3-month bank statement. Please upload these when you can.</div>
         </div>
         <div style="background:var(--red-soft);border:1px solid var(--red-border);border-radius:12px;padding:14px;max-width:85%;align-self:flex-end">
           <div style="font-size:12px;color:var(--text-3);margin-bottom:6px;text-align:right">You · Nov 14, 11:12</div>
@@ -3536,7 +3553,7 @@ function renderClientBooking() {
         </div>
       </div>
       <button class="btn btn-primary btn-full" onclick="showToast('Upgrade to Tier 3 to book a call','info')">
-        <i data-lucide="arrow-up-circle"></i> Upgrade to Tier 3 — 999 PLN
+        <i data-lucide="arrow-up-circle"></i> Upgrade to Tier 3, 999 PLN
       </button>
       <div style="margin-top:16px;font-size:13px;color:var(--text-3);text-align:center">You pay the difference from your current tier</div>
     </div>
@@ -3554,11 +3571,11 @@ function renderClientBilling() {
             <i data-lucide="zap" style="width:20px;height:20px"></i>
           </div>
           <div>
-            <div style="font-family:var(--font-display);font-size:18px;font-weight:700">Tier 2 — Guided</div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:700">Tier 2, Handled</div>
             <div style="font-size:13px;color:var(--text-3)">599 PLN · one-time payment</div>
           </div>
         </div>
-        <div style="font-size:13px;color:var(--text-2);margin-bottom:16px;line-height:1.65">5 review cycles · Direct messaging · 24h SLA</div>
+        <div style="font-size:13px;color:var(--text-2);margin-bottom:16px;line-height:1.65">5 review cycles · Direct messaging · Video strategy call · Step-by-step submission guidance · 24h SLA</div>
         <button class="btn btn-outline btn-full" onclick="showToast('Upgrade to Tier 3: pay difference of 400 PLN','info')">
           <i data-lucide="arrow-up-circle"></i> Upgrade to Tier 3
         </button>
@@ -3570,7 +3587,7 @@ function renderClientBilling() {
             <i data-lucide="check-circle" style="width:16px;height:16px"></i>
           </div>
           <div style="flex:1">
-            <div style="font-size:13px;font-weight:600">Tier 2 — Guided</div>
+            <div style="font-size:13px;font-weight:600">Tier 2, Handled</div>
             <div style="font-size:12px;color:var(--text-3)">Nov 8, 2025</div>
           </div>
           <div style="font-size:14px;font-weight:700">599 PLN</div>
@@ -3755,7 +3772,7 @@ function renderLawyerCalendar() {
     <div class="dash-topbar"><div class="dash-page-title">Calendar</div></div>
     <div class="card" style="max-width:500px">
       <div style="font-size:14px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px">
-        <i data-lucide="calendar" style="width:15px;height:15px;color:var(--red)"></i> Upcoming calls — Nov 2025
+        <i data-lucide="calendar" style="width:15px;height:15px;color:var(--red)"></i> Upcoming calls, Nov 2025
       </div>
       ${[
         {time:'Wed Nov 20 · 14:00', client:'Kwame Tetteh', permit:'Work TRC (Business)', tag:'T3 Video call'},
@@ -3766,7 +3783,7 @@ function renderLawyerCalendar() {
             <i data-lucide="video" style="width:16px;height:16px"></i>
           </div>
           <div style="flex:1">
-            <div style="font-size:13px;font-weight:700">${c.client} — ${c.permit}</div>
+            <div style="font-size:13px;font-weight:700">${c.client}, ${c.permit}</div>
             <div style="font-size:12px;color:var(--text-3)">${c.time}</div>
           </div>
           <span class="badge badge-dark" style="font-size:10px">${c.tag}</span>
@@ -3862,7 +3879,7 @@ function renderAdminOverview() {
       </div>
       <div class="card">
         <div style="font-size:14px;font-weight:700;margin-bottom:12px">Tier distribution</div>
-        ${[{t:'Tier 1 — Essential',n:89,pct:31},{t:'Tier 2 — Guided',n:148,pct:52},{t:'Tier 3 — Full service',n:50,pct:17}].map(d => `
+        ${[{t:'Tier 1, Essential',n:89,pct:31},{t:'Tier 2, Handled',n:148,pct:52},{t:'Tier 3, Lawyer-Assisted',n:50,pct:17}].map(d => `
           <div style="margin-bottom:16px">
             <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px">
               <span style="font-weight:600">${d.t}</span>
@@ -4022,7 +4039,7 @@ function renderAdminRefunds() {
             <td style="font-size:13px">Review not started within SLA</td>
             <td><span class="badge badge-amber">Pending</span></td>
             <td style="display:flex;gap:6px;flex-wrap:wrap">
-              <button class="btn btn-sm" style="background:rgba(22,163,74,0.1);color:var(--success);border:1px solid rgba(22,163,74,0.2)" onclick="showToast('Refund approved — 599 PLN','success')">
+              <button class="btn btn-sm" style="background:rgba(22,163,74,0.1);color:var(--success);border:1px solid rgba(22,163,74,0.2)" onclick="showToast('Refund approved, 599 PLN','success')">
                 <i data-lucide="check"></i> Approve
               </button>
               <button class="btn btn-sm" style="background:rgba(220,38,38,0.1);color:#DC2626;border:1px solid rgba(220,38,38,0.2)" onclick="showToast('Refund denied','error')">
@@ -4034,7 +4051,7 @@ function renderAdminRefunds() {
             <td style="font-family:monospace;font-size:12px">#KF-2025-019</td>
             <td style="font-weight:600">Ama Asante</td>
             <td style="font-weight:700">249 PLN</td>
-            <td style="font-size:13px">Change of plans — within 24h</td>
+            <td style="font-size:13px">Change of plans, within 24h</td>
             <td><span class="badge badge-green">Approved</span></td>
             <td><button class="btn btn-ghost btn-sm" onclick="showToast('Viewing case details','info')"><i data-lucide="eye"></i> View</button></td>
           </tr>
@@ -4079,14 +4096,14 @@ function renderAdminAudit() {
 
 // ─── FAQ ───
 const faqs = [
-  {q: "Is this real legal advice? Or just a website?", a: "KartaFlow combines technology tools with genuine legal review. Olena Harkusha is a licensed Polish immigration lawyer (Radca Prawny) who personally reads your documents and provides written legal feedback. You also sign a formal lawyer engagement letter — this creates a real, protected legal relationship under Polish law. This is not a chatbot. It is structured legal support."},
+  {q: "Is this real legal advice? Or just a website?", a: "KartaFlow combines technology tools with genuine legal review. Olena Harkusha is a licensed Polish immigration lawyer (Radca Prawny) who personally reads your documents and provides written legal feedback. You also sign a formal lawyer engagement letter, this creates a real, protected legal relationship under Polish law. This is not a chatbot. It is structured legal support."},
   {q: "What exactly is a TRC (Karta Pobytu)?", a: "A TRC (Temporary Residence Card / Karta Pobytu) is Poland's residence permit for foreigners. It allows you to legally live and work in Poland without needing a separate work visa. Most foreigners apply for a Work TRC (through their employer), a Family TRC, or a Student TRC. The process requires specific documents submitted to your Voivodeship office."},
-  {q: "What do I actually get in each tier?", a: "Tier 1 (249 PLN): Smart checklist, AI document check, 1 lawyer review cycle with written feedback. Tier 2 (599 PLN): Everything in T1, plus 5 review cycles, direct messaging with the lawyer, and 24h SLA. Tier 3 (999 PLN): Everything in T2, plus unlimited review cycles, a 1:1 video call with Olena, express 12h SLA, and rejection appeal guidance. All tiers include a signed engagement letter."},
+  {q: "What do I actually get in each tier?", a: "Tier 1 (249 PLN): Smart checklist, AI document check, 1 lawyer review cycle with written feedback. Tier 2 (599 PLN): Everything in T1, plus 5 review cycles, direct messaging with the lawyer, 24h SLA, a video strategy call, a lawyer consultation, and step-by-step guidance so you can submit yourself with confidence. Tier 3 (999 PLN): Everything in T2, plus unlimited review cycles, an extended 1:1 video call with Olena, express 12h SLA, rejection appeal guidance, lawyer-guided submission, and an immigration specialist on hand during your submission. All tiers include a signed engagement letter."},
   {q: "What if I upload the wrong documents?", a: "Our AI document check runs before the lawyer ever sees your files. It will flag documents that are unclear, expired, or missing. You can then fix and re-upload before your lawyer review begins. This is exactly what prevents rejection at the Voivodeship office."},
-  {q: "Can I get a refund?", a: "Yes. Full refund within 24 hours of payment if no lawyer review has started. 50% refund after review has started but before any feedback is delivered. No refund after first feedback is delivered. You can always upgrade your tier — you pay only the difference."},
-  {q: "How is my data protected?", a: "All documents are encrypted with AES-256 at rest and TLS 1.3 in transit. Data is stored exclusively on EU-based servers and never processed outside the EU. Your lawyer reviews documents inside a secure browser viewer — files are never downloaded to any device. All access is fully audit-logged."},
-  {q: "I don't speak Polish. Can you still help me?", a: "Yes — KartaFlow is built specifically for foreigners. All checklists, instructions, and lawyer feedback are available in English, Russian, and Ukrainian. The lawyer communicates with you in your preferred language throughout the entire process. Your documents can remain in English where legally accepted, or we will guide you on when a certified Polish translation is required."},
-  {q: "What happens if my application is rejected after using KartaFlow?", a: "KartaFlow has a 98% success rate. In the event of rejection, Tier 3 clients receive rejection review and appeal guidance from Olena directly. For Tier 1 and 2 clients, we will review the rejection notice with you and advise on next steps. Immigration outcomes depend on your specific situation — we cannot guarantee results, but we do everything possible to give you the strongest application."},
+  {q: "Can I get a refund?", a: "Yes. Full refund within 24 hours of payment if no lawyer review has started. 50% refund after review has started but before any feedback is delivered. No refund after first feedback is delivered. You can always upgrade your tier, you pay only the difference."},
+  {q: "How is my data protected?", a: "All documents are encrypted with AES-256 at rest and TLS 1.3 in transit. Data is stored exclusively on EU-based servers and never processed outside the EU. Your lawyer reviews documents inside a secure browser viewer, files are never downloaded to any device. All access is fully audit-logged."},
+  {q: "I don't speak Polish. Can you still help me?", a: "Yes, KartaFlow is built specifically for foreigners. All checklists, instructions, and lawyer feedback are available in English, Russian, and Ukrainian. The lawyer communicates with you in your preferred language throughout the entire process. Your documents can remain in English where legally accepted, or we will guide you on when a certified Polish translation is required."},
+  {q: "What happens if my application is rejected after using KartaFlow?", a: "KartaFlow has a 98% success rate. In the event of rejection, Tier 3 clients receive rejection review and appeal guidance from Olena directly. For Tier 1 and 2 clients, we will review the rejection notice with you and advise on next steps. Immigration outcomes depend on your specific situation, we cannot guarantee results, but we do everything possible to give you the strongest application."},
 ];
 
 function renderFAQ() {
@@ -4142,7 +4159,7 @@ window.addEventListener('load', () => {
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   <!-- Marta AI button -->
-  <button class="marta-fab-btn" onclick="toggleMartaChat()" title="Ask Marta — AI assistant" id="marta-fab-main">
+  <button class="marta-fab-btn" onclick="toggleMartaChat()" title="Ask Marta, AI assistant" id="marta-fab-main">
     <i data-lucide="bot" style="width:26px;height:26px"></i>
     <div id="marta-notif" style="position:absolute;top:2px;right:2px;width:14px;height:14px;background:var(--red);border-radius:50%;border:2px solid white;font-size:9px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700">1</div>
   </button>
@@ -4204,7 +4221,7 @@ window.addEventListener('load', () => {
     <a href="tel:+48452069627" class="btn btn-primary btn-full btn-lg">
       <i data-lucide="phone"></i> Call +48 452 069 627
     </a>
-    <p style="font-size:12px;color:var(--text-3);margin-top:14px">Mon–Fri, 9:00–18:00 · English, Russian, Ukrainian</p>
+    <p style="font-size:12px;color:var(--text-3);margin-top:14px">Monday to Friday, 9:00 to 18:00 · English, Russian, Ukrainian</p>
   </div>
 
   <!-- WHATSAPP TAB -->
@@ -4213,7 +4230,7 @@ window.addEventListener('load', () => {
       <svg viewBox="0 0 24 24" fill="#25D366" style="width:36px;height:36px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </div>
     <div style="font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em">Chat on WhatsApp</div>
-    <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:24px">Send us a message on WhatsApp. We reply in English, Russian, and Ukrainian — usually within a few hours.</p>
+    <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:24px">Send us a message on WhatsApp. We reply in English, Russian, and Ukrainian, usually within a few hours.</p>
     <a href="https://wa.me/48452069627?text=Hello%2C%20I%20have%20a%20question%20about%20my%20TRC%20application." target="_blank" class="btn btn-full btn-lg" style="background:#25D366;color:white">
       <svg viewBox="0 0 24 24" fill="white" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Open WhatsApp
@@ -4262,8 +4279,8 @@ function switchChatTab(tab, btn) {
 
 const martaResponses = {
   "what is a trc": "A TRC (Temporary Residence Card / <strong>Karta Pobytu</strong>) is Poland's residence permit for foreigners. It allows you to legally live and work in Poland. Most people apply for a Work TRC, Family TRC, or Student TRC. The permit is issued by your regional Voivodeship office.",
-  "what documents": "For a Work TRC you typically need: valid passport, employment contract or business registration, employer's statement (Annex), recent salary slips, proof of accommodation (zameldowanie), a filled application form, and a biometric photo. Your exact list depends on your case — KartaFlow generates a personalised checklist for you after a quick intake.",
-  "how much": "KartaFlow has three tiers: <strong>249 PLN</strong> (Essential – 1 lawyer review), <strong>599 PLN</strong> (Guided – 5 review cycles + direct messaging), and <strong>999 PLN</strong> (Fully Handled – unlimited reviews + video call with the lawyer). All are one-time payments. For comparison, a private immigration lawyer typically charges 3,000–8,000 PLN.",
+  "what documents": "For a Work TRC you typically need: valid passport, employment contract or business registration, employer's statement (Annex), recent salary slips, proof of accommodation (zameldowanie), a filled application form, and a biometric photo. Your exact list depends on your case, KartaFlow generates a personalised checklist for you after a quick intake.",
+  "how much": "KartaFlow has three tiers: <strong>249 PLN</strong> (Essential, 1 lawyer review + guided self-submission), <strong>599 PLN</strong> (Handled, 5 review cycles + direct messaging + video strategy call + we handle submission for you once all documents are clear), and <strong>999 PLN</strong> (Lawyer-Assisted, unlimited reviews + dedicated lawyer guidance &amp; hands-on assistance throughout submission). All are one-time payments. For comparison, a private immigration lawyer typically charges 3,000–8,000 PLN.",
   "how long": "With KartaFlow, most clients complete preparation in 5–14 days. Once submitted, the Voivodeship typically processes TRC applications in 3–8 weeks (sometimes longer in Warsaw). KartaFlow speeds up your preparation phase by removing all the guesswork.",
   "language": "Yes! KartaFlow fully supports <strong>English, Russian, and Ukrainian</strong>. All checklists, instructions, lawyer feedback, and support messages are available in your language. Your lawyer communicates in all three languages.",
   "default": "Great question! I can help with information about the TRC process, what documents you need, pricing, and how KartaFlow works. For personalised legal advice, you can <a href='https://wa.me/48452069627' target='_blank' style='color:var(--red);font-weight:600'>chat with our team on WhatsApp</a> or create your account to start your application."
@@ -4309,7 +4326,7 @@ function sendMartaMsg(text) {
     // Add follow-up quick replies
     msgs.innerHTML += `
       <div class="marta-quick-replies" style="padding:0;margin-top:4px">
-        <button class="marta-qr" onclick="joinWaitlist();toggleMartaChat()">Reserve my free founding spot →</button>
+        <button class="marta-qr" onclick="joinWaitlist();toggleMartaChat()">Get early access + lifetime discount →</button>
         <button class="marta-qr" onclick="martaQuickReply(this,'How much does KartaFlow cost?')">See pricing</button>
         <a href="https://wa.me/48452069627" target="_blank" class="marta-qr" style="text-decoration:none;display:inline-flex;align-items:center;gap:4px">💬 WhatsApp us</a>
       </div>`;
@@ -4330,7 +4347,7 @@ function sendMartaMsg(text) {
       <div style="display:flex;align-items:center;gap:8px">
         <div style="width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto"></div>
       </div>
-      <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red)">20 spots left</div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--red)">Early access</div>
       <button onclick="closeWaitlistModal()" aria-label="Close" style="width:36px;height:36px;border-radius:50%;background:var(--surface);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-2)">
         <i data-lucide="x" style="width:16px;height:16px"></i>
       </button>
@@ -4343,17 +4360,17 @@ function sendMartaMsg(text) {
 
     <!-- Scrollable body -->
     <div id="waitlist-modal-body">
-      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Early Access · 20 founding member spots left</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px">Early Access · Lifetime discount for the first 50 signups</div>
       <h2 style="font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px">Fill in this form.<br>Here's what you get.</h2>
 
-      <!-- Description — hidden on mobile -->
+      <!-- Description, hidden on mobile -->
       <div id="waitlist-modal-desc">
-        <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:14px">You're one of the first to use KartaFlow when it launches — and for that, you get the lowest price we'll ever charge, locked in forever.</p>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:14px">You're one of the first to use KartaFlow when it launches, and for that, you get the lowest price we'll ever charge, locked in forever.</p>
         <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Founding price — locked in forever.</strong> The lowest KartaFlow will ever charge, even if you start in 3 months.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Founding price, locked in forever.</strong> The lowest KartaFlow will ever charge, even if you start in 3 months.</span></div>
           <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>First in line.</strong> Priority access when KartaFlow opens publicly.</span></div>
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Personal document checklist</strong> — generated for your specific case after sign-up.</span></div>
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Direct WhatsApp to our legal team</strong> — ask anything, before you pay a single zloty.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Personal document checklist</strong>, generated for your specific case after sign-up.</span></div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-2)"><i data-lucide="check-circle" style="width:15px;height:15px;color:var(--success);flex-shrink:0;margin-top:1px"></i><span><strong>Direct WhatsApp to our legal team</strong>, ask anything, before you pay a single zloty.</span></div>
         </div>
       </div>
 
@@ -4371,7 +4388,7 @@ function sendMartaMsg(text) {
 <!-- MOBILE STICKY CTA -->
 <div id="mobile-sticky-cta">
   <div class="sticky-cta-inner">
-    <button class="sticky-cta-btn" onclick="joinWaitlist()">Claim my founding spot — free →</button>
+    <button class="sticky-cta-btn" onclick="joinWaitlist()">Get early access + lifetime discount, free →</button>
     <button class="sticky-cta-dismiss" onclick="dismissMobileStickyCta()" aria-label="Dismiss">×</button>
   </div>
 </div>
